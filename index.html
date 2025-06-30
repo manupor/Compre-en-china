@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HERO -->
+  <!-- HERO FULL WIDTH -->
   <section class="hero-section">
     <div class="hero-content">
       <h1>SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
@@ -21,93 +21,73 @@
     </div>
   </section>
 
-  <!-- ACERCA + CONTACTO EXPRESS -->
-  <section class="about-contact-section">
-    <div class="about-info">
-      <img src="logo.png" alt="Compre en China IG Logo" class="logo-about">
-      <p>
-        En Compre en China IG conectamos Latinoamérica con las principales rutas logísticas del mundo.<br>
-        Ofrecemos acompañamiento completo para pymes y grandes empresas: paquetería, carga consolidada, contenedores y asesoría estratégica.<br>
-        Oficinas físicas en Costa Rica y bodegas en China, USA, Colombia y Panamá.
-      </p>
-      <a href="#contacto" class="cta-btn sm">Agendar Asesoría Gratuita</a>
-    </div>
-    <form class="contact-form" id="contacto">
-      <h3>Contacto Express</h3>
-      <input type="text" placeholder="Nombre" required>
-      <input type="tel" placeholder="Teléfono" required>
-      <input type="text" placeholder="País" required>
-      <a href="https://wa.me/50686165186" class="cta-btn whatsapp" target="_blank">WhatsApp</a>
-    </form>
-  </section>
+  <main>
+    <!-- ABOUT + CONTACTO EN MISMA FILA (EN DESKTOP) -->
+    <section class="sections-flex">
+      <div class="about-info">
+        <img src="logo.png" alt="Compre en China IG Logo" class="logo-about">
+        <p>
+          En Compre en China IG conectamos Latinoamérica con las principales rutas logísticas del mundo.<br>
+          Ofrecemos acompañamiento completo para pymes y grandes empresas: paquetería, carga consolidada, contenedores y asesoría estratégica.<br>
+          Oficinas físicas en Costa Rica y bodegas en China, USA, Colombia y Panamá.
+        </p>
+        <a href="#contacto" class="cta-btn sm">Agendar Asesoría Gratuita</a>
+      </div>
+      <form class="contact-form" id="contacto">
+        <h3>Contacto Express</h3>
+        <input type="text" placeholder="Nombre" required>
+        <input type="tel" placeholder="Teléfono" required>
+        <input type="text" placeholder="País" required>
+        <a href="https://wa.me/50686165186" class="cta-btn whatsapp" target="_blank">WhatsApp</a>
+      </form>
+    </section>
 
-  <!-- SERVICIOS RÁPIDOS -->
-  <section class="services-section">
-    <div class="center">
-      <!-- Puedes agregar aquí tus tarjetas de servicio -->
-      <p>
-        <!-- Ejemplo, deja tu copy original aquí -->
-        Servicios rápidos y eficientes para todo tipo de importadores.
-      </p>
-    </div>
-  </section>
+    <!-- BENEFICIOS en grid compacto -->
+    <section class="benefits-section">
+      <h3 style="text-align:center;font-weight:800;font-size:1.16em;">Beneficios de trabajar con Compre en China IG</h3>
+      <div class="benefits-grid">
+        <div class="benefit-card">Tarifas claras y sin letra pequeña</div>
+        <div class="benefit-card">Entregas semanales sin fallas</div>
+        <div class="benefit-card">Seguimiento por WhatsApp en tiempo real</div>
+        <div class="benefit-card">Expertos en importaciones B2C y B2B</div>
+        <div class="benefit-card">Seguridad aduanal y legal</div>
+      </div>
+    </section>
 
-  <!-- BENEFICIOS -->
-  <section class="benefits-section">
-    <div class="center">
-      <!-- Lista de beneficios con tu copy original -->
-      <h3>Beneficios de trabajar con Compre en China IG</h3>
-      <ul>
-        <li>Tarifas claras y sin letra pequeña</li>
-        <li>Entregas semanales sin fallas</li>
-        <li>Seguimiento por WhatsApp en tiempo real</li>
-        <li>Expertos en importaciones B2C y B2B</li>
-        <li>Seguridad aduanal y legal</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- VISIÓN -->
-  <section class="vision-section">
-    <div class="center">
+    <!-- VISIÓN compacta -->
+    <section class="vision-section">
       <h2>Nuestra visión es que cada empresa en Latinoamérica pueda importar sin miedo, sin pérdidas y con un sistema que funcione.</h2>
       <p>En Compre en China IG no solo movemos paquetes, movemos negocios, sueños y expansión.<br>Porque importar debería ser tan rentable como su negocio lo merece.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- EVENTOS -->
-  <section class="events-section">
-    <div class="center">
-      <h3>Últimas noticias o próximos eventos</h3>
-      <div>
+    <!-- EVENTO como tarjeta destacada -->
+    <section class="events-section">
+      <div class="event-card">
         <b>Webinar gratuito:</b> Importaciones 2024: rutas, aranceles y soluciones<br>
-        <span>11 de junio - 🕖 7:00pm Costa Rica</span>
+        <span>11 de junio - 🕖 7:00pm Costa Rica</span><br>
         <a href="#" class="cta-btn sm">Registrarse</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- AUTORIDAD / CÁMARAS -->
-  <section class="authority-section">
-    <div class="center">
+    <!-- AUTORIDAD / CÁMARAS -->
+    <section class="authority-section">
       <p>Miembros activos de cámaras de comercio en Latinoamérica y alianzas con operadores logísticos certificados en Asia y USA.</p>
-      <!-- Aquí puedes poner los logos de tus aliados -->
-      <div style="display:flex;gap:18px;justify-content:center;">
-        <img src="camara1.png" alt="" style="height:40px;">
-        <img src="camara2.png" alt="" style="height:40px;">
-        <img src="camara3.png" alt="" style="height:40px;">
+      <div class="authority-logos">
+        <img src="camara1.png" alt="">
+        <img src="camara2.png" alt="">
+        <img src="camara3.png" alt="">
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer style="margin:32px auto 0 auto; max-width: 1100px; background: #fff; border-radius:24px 24px 0 0; box-shadow: var(--shadow);">
-    <div style="padding: 24px 12px; text-align:center; color:#222;">
+  <!-- FOOTER SIMPLE Y CENTRADO -->
+  <footer>
+    <div class="footer-row">
       <div>
         Aguas Zarcas, San Carlos, Costa Rica<br>
         +506 8616-5186 | ✉️ info@compreenchinaig.com
       </div>
-      <div style="margin:8px 0;">
+      <div>
         <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">WhatsApp</a> | <a href="#">Términos</a> | <a href="#">Política de Privacidad</a>
       </div>
       <div>
