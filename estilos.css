@@ -2,9 +2,14 @@
   --main-blue: #1374e0;
   --main-yellow: #ffb400;
   --bg: #f7f7fa;
+  --accent-orange: #f2861b;
   --text-dark: #191b2b;
   --footer-bg: #222a36;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -21,6 +26,7 @@ section {
 .hero-section {
   position: relative;
   background: url('hero-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   min-height: 52vh;
   display: flex;
   align-items: center;
@@ -28,7 +34,7 @@ section {
 }
 .hero-overlay {
   position: absolute; left: 0; top: 0; right: 0; bottom: 0;
-  background: rgba(18, 36, 53, 0.70);
+  background: linear-gradient(145deg, rgba(19,116,224,0.8), rgba(242,134,27,0.7));
   z-index: 1;
 }
 .hero-content {
@@ -56,10 +62,10 @@ section {
   font-weight: bold;
   display: inline-block;
   margin-top: 18px;
-  transition: background .22s;
+  transition: background .22s, transform .22s;
   box-shadow: 0 4px 16px rgba(19,116,224,0.12);
 }
-.cta-btn:hover {background: #17468c;}
+.cta-btn:hover {background: #17468c; transform: translateY(-2px);}
 .cta-btn.sm {font-size: 1em; padding: 10px 20px;}
 .cta-btn.whatsapp {background: #25d366;}
 .cta-btn.whatsapp:hover {background: #1fa84f;}
@@ -111,7 +117,7 @@ section {
   margin-bottom: 20px;
 }
 .service-card {
-  background: #1e2232;
+  background: linear-gradient(160deg, var(--main-blue), var(--accent-orange));
   color: #fff;
   border-radius: 14px;
   box-shadow: 0 2px 18px rgba(19,116,224,0.08);
@@ -159,6 +165,7 @@ section {
 
 .vision-section {
   background: url('vision-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   border-radius: 20px;
   position: relative;
   min-height: 240px;
