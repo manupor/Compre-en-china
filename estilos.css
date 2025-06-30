@@ -112,7 +112,12 @@ section {
   font-size: 1em;
 }
 .contact-form h3 {margin-bottom: 10px;}
-.contact-form .cta-btn {margin-top: 12px; width: 100%; text-align: center;}
+.contact-form .cta-btn {
+  margin-top: 12px;
+  width: 70%;
+  align-self: center;
+  text-align: center;
+}
 
 .services-section .services-row {
   display: flex;
