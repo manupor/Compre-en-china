@@ -64,6 +64,7 @@ section {
   background-size: 200% auto;
   transition: background-position .3s, transform .22s;
   box-shadow: 0 4px 16px rgba(19,116,224,0.12);
+  border: none;
 }
 .cta-btn:hover {background-position: right center; transform: translateY(-2px);}
 .cta-btn.sm {font-size: 1em; padding: 10px 20px;}
@@ -77,6 +78,7 @@ section {
 .center {text-align: center;}
 .center .cta-btn {margin-top: 18px;}
 
+/* ----------- FORMULARIO ----------- */
 .about-contact-section {
   background: #fff;
   border-radius: 22px;
@@ -106,33 +108,54 @@ section {
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 2px 14px rgba(19,116,224,0.05);
+  align-items: center;
 }
 .contact-form input {
+  width: 100%;
   padding: 12px 10px;
   border-radius: 6px;
   border: 1px solid #e0e7ef;
   margin-bottom: 10px;
   font-size: 1em;
+  box-sizing: border-box;
 }
 .contact-form h3 {margin-bottom: 10px;}
 .contact-form .cta-btn,
 .contact-form .cta-btn.whatsapp {
-  margin-top: 12px;
-  width: 60%;
+  width: 100%;
   min-width: 140px;
-  max-width: 100%;
-  align-self: center;
+  max-width: 360px;
+  margin-top: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  align-self: stretch;
   text-align: center;
   box-sizing: border-box;
+  display: block;
+}
+.contact-form .cta-btn.whatsapp {
+  margin-top: 10px;
+}
+@media (max-width: 900px) {
+  .about-contact-section {padding: 28px 8px;}
+  .about-contact-container {gap: 18px;}
+}
+@media (max-width: 700px) {
+  .about-contact-container {flex-direction: column; gap: 22px;}
+  .about-info, .contact-form {width: 100%;}
 }
 @media (max-width: 600px) {
+  .hero-content h1 {font-size: 1.12em;}
+  .hero-content {padding: 0 16px;}
+  .about-contact-section {padding: 18px 6px;}
   .contact-form .cta-btn,
-  .contact-form .cta-btn.whatsapp {
-    width: 96%;
-    min-width: 0;
-  }
+  .contact-form .cta-btn.whatsapp {width: 100%; min-width: 0;}
+  .service-card, .benefit-card {max-width: 96vw;}
+  .vision-content h2 {font-size: 1.07em;}
+  .authority-logos img {height: 32px;}
 }
 
+/* ----------- RESTO DEL CSS IGUAL (servicios, beneficios, footer...) ----------- */
 .services-section .services-row {
   display: flex;
   gap: 24px;
@@ -249,19 +272,10 @@ footer {
   .services-row, .benefits-row {flex-direction: column;}
 }
 
-@media (max-width: 600px) {
-  .hero-content h1 {font-size: 1.12em;}
-  .hero-content {padding: 0 16px;}
-  .about-contact-section {padding: 18px 6px;}
-  .service-card, .benefit-card {max-width: 96vw;}
-  .vision-content h2 {font-size: 1.07em;}
-  .authority-logos img {height: 32px;}
-}
-
+/* Animación de letras en hero */
 .animate__animated {--animate-duration: 1s;}
 .scroll-animate {opacity: 0; transform: translateY(25px);}
 .show {opacity: 1; transform: none; transition: opacity .6s ease-out, transform .6s ease-out;}
-
 .hero-content .letter {
   opacity: 0;
   display: inline-block;
@@ -269,7 +283,6 @@ footer {
   filter: blur(3px);
   animation: heroLetterAppear 0.75s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
-
 @keyframes heroLetterAppear {
   to {
     opacity: 1;
