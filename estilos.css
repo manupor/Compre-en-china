@@ -60,7 +60,7 @@ section {
   box-shadow: 0 4px 16px rgba(19,116,224,0.12);
 }
 .cta-btn:hover {background: #17468c;}
-.cta-btn.sm {font-size: 1em; padding: 10px 20px;}
+.cta-btn.sm {font-size: 1em; padding: 10px 25px;}
 .cta-btn.whatsapp {background: #25d366;}
 .cta-btn.whatsapp:hover {background: #1fa84f;}
 
