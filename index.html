@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- HERO -->
-  <section class="hero-section animate__animated animate__fadeIn">
+  <section class="hero-section animate__animated animate__fadeIn parallax" data-speed="0.3">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
@@ -91,7 +91,7 @@
   </section>
 
   <!-- VISIÓN -->
-  <section class="vision-section animate__animated animate__fadeIn">
+  <section class="vision-section animate__animated animate__fadeIn parallax" data-speed="0.2">
     <div class="vision-bg"></div>
     <div class="vision-content">
       <h2>Nuestra visión es que cada empresa en Latinoamérica pueda importar sin miedo, sin pérdidas y con un sistema que funcione.</h2>
@@ -148,5 +148,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.parallax').forEach(sec => {
+        const speed = parseFloat(sec.dataset.speed) || 0.5;
+        sec.style.backgroundPositionY = -(window.scrollY * speed) + 'px';
+      });
+    });
+  </script>
 </body>
 </html>

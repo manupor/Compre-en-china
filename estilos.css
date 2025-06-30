@@ -53,7 +53,7 @@ section {
 .hero-content p {font-size: 1.18em;}
 .hero-years {font-weight: 600;}
 .cta-btn {
-  background: var(--main-blue);
+  background: linear-gradient(135deg, var(--main-blue), var(--accent-orange));
   color: #fff;
   padding: 13px 32px;
   border-radius: 30px;
@@ -65,10 +65,12 @@ section {
   transition: background .22s, transform .22s;
   box-shadow: 0 4px 16px rgba(19,116,224,0.12);
 }
-.cta-btn:hover {background: #17468c; transform: translateY(-2px);}
+.cta-btn:hover {background: linear-gradient(135deg, #17468c, var(--accent-orange)); transform: translateY(-2px);}
 .cta-btn.sm {font-size: 1em; padding: 10px 20px;}
 .cta-btn.whatsapp {background: #25d366;}
 .cta-btn.whatsapp:hover {background: #1fa84f;}
+
+.center {text-align: center;}
 
 .about-contact-section {
   background: #fff;
