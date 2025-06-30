@@ -233,6 +233,7 @@ footer {
 
 @media (max-width: 600px) {
   .hero-content h1 {font-size: 1.12em;}
+  .hero-content {padding: 0 16px;}
   .about-contact-section {padding: 18px 6px;}
   .service-card, .benefit-card {max-width: 96vw;}
   .vision-content h2 {font-size: 1.07em;}
