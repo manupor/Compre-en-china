@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- HERO -->
-  <section class="hero-section animate__animated animate__fadeIn">
+  <section class="hero-section parallax scroll-animate" data-animation="fadeIn" data-speed="0.3">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
@@ -24,7 +24,7 @@
   </section>
 
   <!-- ACERCA + CONTACTO EXPRESS -->
-  <section class="about-contact-section animate__animated animate__fadeInUp">
+  <section class="about-contact-section scroll-animate" data-animation="fadeInUp">
     <div class="about-contact-container">
       <div class="about-info">
         <img src="logo.png" alt="Compre en China IG Logo" class="logo-about">
@@ -44,9 +44,9 @@
   </section>
 
   <!-- SERVICIOS RÁPIDOS -->
-  <section class="services-section animate__animated animate__fadeInUp">
+  <section class="services-section scroll-animate" data-animation="fadeInUp">
     <div class="services-row">
-      <div class="service-card animate__animated animate__fadeInUp">
+      <div class="service-card scroll-animate" data-animation="fadeInUp">
         <div class="icon-serv"><img src="paqueteria.svg" alt=""></div>
         <h4>Paquetería y Carga Liviana</h4>
         <ul>
@@ -55,7 +55,7 @@
           <li>$10 por kilo (no aplica)</li>
         </ul>
       </div>
-      <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="service-card scroll-animate animate__delay-1s" data-animation="fadeInUp">
         <div class="icon-serv"><img src="contenedor.svg" alt=""></div>
         <h4>Carga Consolidada y Contenedores</h4>
         <ul>
@@ -64,7 +64,7 @@
           <li>Inspección, seguimiento y reportes</li>
         </ul>
       </div>
-      <div class="service-card animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="service-card scroll-animate animate__delay-2s" data-animation="fadeInUp">
         <div class="icon-serv"><img src="asesoria.svg" alt=""></div>
         <h4>Asesoría y Formación para Importadores</h4>
         <ul>
@@ -79,7 +79,7 @@
   </section>
 
   <!-- BENEFICIOS -->
-  <section class="benefits-section animate__animated animate__fadeInUp">
+  <section class="benefits-section scroll-animate" data-animation="fadeInUp">
     <h3>Beneficios de trabajar con Compre en China IG</h3>
     <div class="benefits-row">
       <div class="benefit-card"><img src="tarifa.svg" alt="">Tarifas claras y sin letra pequeña</div>
@@ -91,7 +91,7 @@
   </section>
 
   <!-- VISIÓN -->
-  <section class="vision-section animate__animated animate__fadeIn">
+  <section class="vision-section parallax scroll-animate" data-animation="fadeIn" data-speed="0.2">
     <div class="vision-bg"></div>
     <div class="vision-content">
       <h2>Nuestra visión es que cada empresa en Latinoamérica pueda importar sin miedo, sin pérdidas y con un sistema que funcione.</h2>
@@ -100,7 +100,7 @@
   </section>
 
   <!-- EVENTOS -->
-  <section class="events-section animate__animated animate__fadeInUp">
+  <section class="events-section scroll-animate" data-animation="fadeInUp">
     <h3>Últimas noticias o próximos eventos</h3>
     <div class="event-card">
       <b>Webinar gratuito:</b> Importaciones 2024: rutas, aranceles y soluciones<br>
@@ -110,7 +110,7 @@
   </section>
 
   <!-- AUTORIDAD / CÁMARAS -->
-  <section class="authority-section animate__animated animate__fadeInUp">
+  <section class="authority-section scroll-animate" data-animation="fadeInUp">
     <p>Miembros activos de cámaras de comercio en Latinoamérica y alianzas con operadores logísticos certificados en Asia y USA.</p>
     <div class="authority-logos">
       <img src="camara1.png" alt="">
@@ -121,7 +121,7 @@
   </section>
 
   <!-- TESTIMONIOS -->
-  <section class="testimonials-section animate__animated animate__fadeIn">
+  <section class="testimonials-section scroll-animate" data-animation="fadeIn">
     <h3>Testimonios de clientes</h3>
     <div class="testimonial-slider">
       <!-- Aquí puedes poner un slider de testimonios, ejemplo: -->
@@ -148,5 +148,26 @@
       </div>
     </div>
   </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.parallax').forEach(sec => {
+        const speed = parseFloat(sec.dataset.speed) || 0.5;
+        sec.style.backgroundPositionY = -(window.scrollY * speed) + 'px';
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(ent => {
+        if (ent.isIntersecting) {
+          const anim = ent.target.dataset.animation || 'fadeInUp';
+          ent.target.classList.add('animate__animated', `animate__${anim}`, 'show');
+          ent.target.classList.remove('scroll-animate');
+          observer.unobserve(ent.target);
+        }
+      });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
