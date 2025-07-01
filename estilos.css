@@ -279,7 +279,9 @@ img {
   gap: 12px;
   min-width: 200px;
   max-width: 280px;
-  transition: transform .2s, box-shadow .2s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform .6s ease, box-shadow .2s, opacity .6s ease;
 }
 
 .benefit-card .benefit-icon {
@@ -295,6 +297,11 @@ img {
 
 .benefit-card:hover .benefit-icon {
   animation: icon-pop .5s ease-in-out;
+}
+
+.benefit-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes icon-pop {

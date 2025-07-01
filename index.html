@@ -103,6 +103,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const heroImg = document.querySelector('.hero-bg-img');
       const dividers = document.querySelectorAll('.parallax-divider');
+      const benefitCards = document.querySelectorAll('.benefit-card');
 
       window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
@@ -110,6 +111,19 @@
         dividers.forEach(function (div) {
           div.style.backgroundPosition = 'center ' + -(scrolled * 0.25) + 'px';
         });
+      });
+
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      benefitCards.forEach(function(card) {
+        observer.observe(card);
       });
     });
   </script>
