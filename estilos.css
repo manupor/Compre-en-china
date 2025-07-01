@@ -25,6 +25,12 @@ body {
   line-height: 1.5;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-section {
   position: relative;
   width: 100%;
@@ -166,6 +172,7 @@ body {
   box-shadow: 0 2px 14px rgba(19,116,224,0.04);
   min-width: 270px;
   max-width: 390px;
+  scroll-margin-top: 80px;
 }
 .contact-form h3 {
   margin-bottom: 14px;
@@ -178,6 +185,13 @@ body {
   margin-bottom: 10px;
   font-size: 1em;
   background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: var(--main-blue);
+  box-shadow: 0 0 0 2px rgba(19,116,224,0.2);
 }
 .contact-form .cta-btn,
 .contact-form .cta-btn.whatsapp {
@@ -205,6 +219,11 @@ body {
 }
 
 .benefits-section {padding: 22px 0;}
+.benefits-section h3 {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 18px;
+}
 .benefits-row {
   display: flex;
   justify-content: center;
@@ -221,6 +240,16 @@ body {
   font-size: 1.08em;
   gap: 12px;
   min-width: 200px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(19,116,224,0.14);
+}
+
+@media (max-width: 600px) {
+  .benefit-card {width: 95%; margin: auto;}
 }
 
 footer {
