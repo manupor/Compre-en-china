@@ -23,6 +23,11 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -218,7 +223,10 @@ img {
   .about-contact-section {border-radius: 0;}
 }
 
-.benefits-section {padding: 22px 0;}
+.benefits-section {
+  padding: 22px 10px;
+  width: 100%;
+}
 .benefits-section h3 {
   text-align: center;
   font-size: 1.6em;
@@ -229,6 +237,8 @@ img {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
 }
 .benefit-card {
   background: #fff;
@@ -237,10 +247,18 @@ img {
   padding: 16px 20px 12px 20px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   font-size: 1.08em;
   gap: 12px;
   min-width: 200px;
   transition: transform .2s, box-shadow .2s;
+}
+
+.benefit-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
 }
 
 .benefit-card:hover {
