@@ -6,6 +6,11 @@
   --accent-purple: #b43cff;
   --text-dark: #191b2b;
   --footer-bg: #222a36;
+  --container-max: 1200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -18,12 +23,32 @@ body {
   color: var(--text-dark);
   margin: 0;
   padding: 0;
+  line-height: 1.5;
+  font-size: clamp(0.98rem, 0.3vw + 1rem, 1.05rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container-narrow {
+  max-width: var(--container-max);
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-section {
   position: relative;
-  width: 100vw;
-  min-height: 68vh;
+  width: 100%;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,15 +57,23 @@ body {
 
 .hero-bg-img {
   position: absolute;
-  left: 0; top: 0; width: 100vw; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 1;
+  will-change: transform;
 }
 
 .hero-overlay {
   position: absolute;
-  left: 0; top: 0; right: 0; bottom: 0;
-  width: 100vw; height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(120deg, rgba(19,116,224,0.65) 10%, rgba(180,60,255,0.25) 70%, rgba(22,30,58,0.7) 100%);
   z-index: 2;
 }
@@ -51,13 +84,13 @@ body {
   color: #fff;
   text-align: center;
   width: 100%;
-  max-width: 980px;
+  max-width: 840px;
   margin: auto;
-  padding: 88px 6vw 90px 6vw;
+  padding: clamp(60px, 10vw, 80px) 5vw;
 }
 
 .hero-content h1 {
-  font-size: 2.7em;
+  font-size: clamp(1.6rem, 5vw, 2.7rem);
   margin-bottom: 16px;
   font-weight: 800;
   text-shadow: 0 4px 32px rgba(30,40,64,0.25);
@@ -95,7 +128,7 @@ body {
   background: #25d366;
   color: #fff;
   background-image: none;
-  width: 90%;
+  width: 100%;
   margin: 18px auto 0 auto;
   display: block;
   text-align: center;
@@ -110,7 +143,7 @@ body {
 }
 
 .main-section {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -122,12 +155,11 @@ body {
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 2px 24px rgba(30,54,73,0.07);
-  padding: 38px 32px 28px 32px;
-  max-width: 1200px;
-  width: 96vw;
-  margin: -60px auto 38px auto;
+  padding: 40px 32px;
+  margin: -60px auto 60px auto;
+  width: 100%;
   display: flex;
-  gap: 48px;
+  gap: 40px;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -142,18 +174,20 @@ body {
   margin: 0 0 24px 0;
   font-size: 1.02em;
   font-weight: 500;
+  line-height: 1.6;
 }
 .contact-form {
   flex: 1 1 39%;
   background: #f7f7fa;
   border-radius: 16px;
-  padding: 26px 18px 22px 18px;
+  padding: 28px 20px 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 2px 14px rgba(19,116,224,0.04);
   min-width: 270px;
-  max-width: 390px;
+  max-width: 420px;
+  scroll-margin-top: 80px;
 }
 .contact-form h3 {
   margin-bottom: 14px;
@@ -166,12 +200,19 @@ body {
   margin-bottom: 10px;
   font-size: 1em;
   background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: var(--main-blue);
+  box-shadow: 0 0 0 2px rgba(19,116,224,0.2);
 }
 .contact-form .cta-btn,
 .contact-form .cta-btn.whatsapp {
-  width: 90%;
+  width: 100%;
   min-width: 130px;
-  max-width: 98%;
+  max-width: 100%;
   align-self: center;
   text-align: center;
   box-sizing: border-box;
@@ -180,34 +221,107 @@ body {
 @media (max-width: 1000px) {
   .about-contact-section {
     flex-direction: column;
-    gap: 22px;
-    padding: 24px 10px 18px 10px;
-    max-width: 99vw;
+    gap: 24px;
+    padding: 24px 12px 22px 12px;
   }
   .contact-form {max-width: 99vw;}
   .logo-about {margin: 0 auto 12px auto;}
+  .about-info {text-align: center;}
 }
 @media (max-width: 650px) {
   .main-section {padding: 0;}
   .about-contact-section {border-radius: 0;}
 }
 
-.benefits-section {padding: 22px 0;}
-.benefits-row {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
+.benefits-section {
+  padding: 40px 10px;
+  width: 100%;
+}
+.benefits-section h3 {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 18px;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: auto;
 }
 .benefit-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(30,54,73,0.09);
-  padding: 16px 20px 12px 20px;
+  padding: 14px 18px 10px 18px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   font-size: 1.08em;
   gap: 12px;
   min-width: 200px;
+  max-width: 280px;
+  transition: transform .2s, box-shadow .2s;
 }
-.
+
+.benefit-card .benefit-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+  display: block;
+  font-size: 48px;
+  color: var(--main-blue);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(19,116,224,0.18);
+}
+
+@media (max-width: 600px) {
+  .benefit-card {width: 100%; margin: 0 auto;}
+}
+
+footer {
+  background: var(--footer-bg);
+  color: #fff;
+  padding: 18px 10px;
+  font-size: 0.9em;
+}
+
+.footer-row {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  text-align: center;
+}
+
+.footer-row a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.footer-row a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-row {flex-direction: column;}
+}
+
+.parallax-divider {
+  background-image: url('naviera.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 220px;
+}
