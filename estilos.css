@@ -272,6 +272,8 @@ img {
   margin-bottom: 8px;
   flex-shrink: 0;
   display: block;
+  font-size: 48px;
+  color: var(--main-blue);
 }
 
 .benefit-card:hover {
