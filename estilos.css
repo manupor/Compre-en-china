@@ -6,6 +6,7 @@
   --accent-purple: #b43cff;
   --text-dark: #191b2b;
   --footer-bg: #222a36;
+  --container-max: 1200px;
 }
 
 *, *::before, *::after {
@@ -23,6 +24,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  font-size: clamp(0.98rem, 0.3vw + 1rem, 1.05rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,8 +34,8 @@ body {
 }
 
 .container-narrow {
-  max-width: 1000px;
-  width: 92%;
+  max-width: var(--container-max);
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -46,7 +48,7 @@ img {
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 75vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +85,7 @@ img {
   width: 100%;
   max-width: 840px;
   margin: auto;
-  padding: 72px 5vw 74px 5vw;
+  padding: clamp(60px, 10vw, 80px) 5vw;
 }
 
 .hero-content h1 {
@@ -152,11 +154,11 @@ img {
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 2px 24px rgba(30,54,73,0.07);
-  padding: 32px 24px;
-  margin: -50px auto 40px auto;
+  padding: 40px 32px;
+  margin: -60px auto 60px auto;
   width: 100%;
   display: flex;
-  gap: 32px;
+  gap: 40px;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -171,18 +173,19 @@ img {
   margin: 0 0 24px 0;
   font-size: 1.02em;
   font-weight: 500;
+  line-height: 1.6;
 }
 .contact-form {
   flex: 1 1 39%;
   background: #f7f7fa;
   border-radius: 16px;
-  padding: 24px 16px 20px 16px;
+  padding: 28px 20px 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   box-shadow: 0 2px 14px rgba(19,116,224,0.04);
   min-width: 270px;
-  max-width: 400px;
+  max-width: 420px;
   scroll-margin-top: 80px;
 }
 .contact-form h3 {
@@ -206,9 +209,9 @@ img {
 }
 .contact-form .cta-btn,
 .contact-form .cta-btn.whatsapp {
-  width: 90%;
+  width: 100%;
   min-width: 130px;
-  max-width: 98%;
+  max-width: 100%;
   align-self: center;
   text-align: center;
   box-sizing: border-box;
@@ -217,11 +220,12 @@ img {
 @media (max-width: 1000px) {
   .about-contact-section {
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 10px 18px 10px;
+    gap: 24px;
+    padding: 24px 12px 22px 12px;
   }
   .contact-form {max-width: 99vw;}
   .logo-about {margin: 0 auto 12px auto;}
+  .about-info {text-align: center;}
 }
 @media (max-width: 650px) {
   .main-section {padding: 0;}
@@ -229,7 +233,7 @@ img {
 }
 
 .benefits-section {
-  padding: 20px 10px;
+  padding: 40px 10px;
   width: 100%;
 }
 .benefits-section h3 {
@@ -240,7 +244,7 @@ img {
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
+  gap: 24px;
   list-style: none;
   padding: 0;
   margin: auto;
@@ -257,6 +261,7 @@ img {
   font-size: 1.08em;
   gap: 12px;
   min-width: 200px;
+  max-width: 280px;
   transition: transform .2s, box-shadow .2s;
 }
 
@@ -268,17 +273,18 @@ img {
 
 .benefit-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(19,116,224,0.14);
+  box-shadow: 0 6px 20px rgba(19,116,224,0.18);
 }
 
 @media (max-width: 600px) {
-  .benefit-card {width: 95%; margin: auto;}
+  .benefit-card {width: 100%; margin: 0 auto;}
 }
 
 footer {
   background: var(--footer-bg);
   color: #fff;
   padding: 18px 10px;
+  font-size: 0.9em;
 }
 
 .footer-row {
