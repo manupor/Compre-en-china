@@ -323,10 +323,10 @@ footer {
   max-width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
   text-align: center;
 }
 
