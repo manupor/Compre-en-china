@@ -15,7 +15,7 @@
     <img src="naviera.jpg" alt="Buque de carga navegando" class="hero-bg-img" loading="lazy">
     <div class="hero-overlay"></div>
     <div class="hero-content container-narrow">
-      <h1>SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
+      <h1 id="hero-heading">SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
       <p>Importe desde China, Colombia, Panamá o USA con un sistema claro, rentable y acompañado.<br>
         <span class="hero-years">Más de 20 años ayudando a empresas a importar con confianza.</span>
       </p>
@@ -88,6 +88,22 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const heading = document.getElementById('hero-heading');
+      const text = heading.textContent.trim();
+      heading.textContent = '';
+      let idx = 0;
+      (function type() {
+        if (idx < text.length) {
+          heading.textContent += text.charAt(idx);
+          idx++;
+          setTimeout(type, 70);
+        }
+      })();
+    });
+  </script>
 
 </body>
 </html>
