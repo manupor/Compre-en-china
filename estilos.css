@@ -63,6 +63,7 @@ img {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  will-change: transform;
 }
 
 .hero-overlay {
@@ -310,4 +311,13 @@ footer {
 
 @media (max-width: 600px) {
   .footer-row {flex-direction: column;}
+}
+
+.parallax-divider {
+  background-image: url('naviera.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 220px;
 }

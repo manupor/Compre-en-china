@@ -16,12 +16,13 @@
     <div class="hero-overlay"></div>
     <div class="hero-content container-narrow">
       <h1 id="hero-heading">SOLUCIONES LOGÍSTICAS EFICIENTES PARA SU NEGOCIO</h1>
-      <p>Importe desde China, Colombia, Panamá o USA con un sistema claro, rentable y acompañado.<br>
+      <p id="hero-tagline">Importe desde China, Colombia, Panamá o USA con un sistema claro, rentable y acompañado.<br>
         <span class="hero-years">Más de 20 años ayudando a empresas a importar con confianza.</span>
       </p>
       <a href="#contacto" class="cta-btn">Agendar Asesoría Gratuita</a>
     </div>
   </header>
+  <div class="parallax-divider"></div>
 
   <!-- BLOQUE MAIN: ACERCA + CONTACTO -->
   <main class="main-section">
@@ -43,6 +44,7 @@
       </form>
     </section>
   </main>
+  <div class="parallax-divider"></div>
 
   <!-- BENEFICIOS (ejemplo, puedes personalizar) -->
   <section class="benefits-section">
@@ -92,16 +94,31 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const heading = document.getElementById('hero-heading');
-      const text = heading.textContent.trim();
-      heading.textContent = '';
-      let idx = 0;
-      (function type() {
-        if (idx < text.length) {
-          heading.textContent += text.charAt(idx);
-          idx++;
-          setTimeout(type, 70);
-        }
-      })();
+      const tagline = document.getElementById('hero-tagline');
+      const heroImg = document.querySelector('.hero-bg-img');
+
+      function typeText(element, text, speed, callback) {
+        let i = 0;
+        element.textContent = '';
+        (function type() {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else if (callback) {
+            callback();
+          }
+        })();
+      }
+
+      typeText(heading, heading.textContent.trim(), 70, function () {
+        typeText(tagline, tagline.textContent.trim(), 45);
+      });
+
+      window.addEventListener('scroll', function () {
+        const scrolled = window.pageYOffset;
+        heroImg.style.transform = 'translateY(' + scrolled * 0.3 + 'px)';
+      });
     });
   </script>
 
