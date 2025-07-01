@@ -6,7 +6,6 @@
   --accent-purple: #b43cff;
   --text-dark: #191b2b;
   --footer-bg: #222a36;
-  --gradient-hero: linear-gradient(120deg, rgba(19,116,224,0.80), rgba(180,60,255,0.78));
 }
 html {
   scroll-behavior: smooth;
@@ -16,27 +15,32 @@ body {
   background: var(--bg);
   color: var(--text-dark);
   margin: 0;
-  padding: 0;
+}
+section {
+  margin: 0 auto 38px auto;
+  max-width: 1300px;
 }
 .hero-section {
   position: relative;
-  min-height: 58vh;
+  min-height: 60vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: url('Compre-en-china/naviera.jpg') center center/cover no-repeat;
 }
-.hero-video-bg {
+.hero-logo {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 1;
+  top: 36px;
+  left: 54px;
+  width: 88px;
+  z-index: 3;
 }
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: var(--gradient-hero);
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, rgba(19,116,224,0.60), rgba(180,60,255,0.42), rgba(22,30,58,0.70) 90%);
   z-index: 2;
 }
 .hero-content {
@@ -44,55 +48,31 @@ body {
   position: relative;
   color: #fff;
   text-align: center;
-  max-width: 900px;
+  max-width: 760px;
   margin: auto;
-  padding: 64px 24px 48px 24px;
-  width: 100vw;
-}
-.hero-logo {
-  position: absolute;
-  top: 30px; left: 38px;
-  width: 80px;
-  z-index: 4;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.12);
-  padding: 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 70px 8vw 70px 8vw;
 }
 .hero-content h1 {
-  font-size: 2.7em;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-  margin-top: 0;
+  font-size: 2.5em;
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.22);
 }
-.hero-content p {
-  font-size: 1.21em;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-.hero-years {
-  font-weight: 600;
-  font-size: 1.05em;
-  display: block;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
+.hero-content p {font-size: 1.23em;}
+.hero-years {font-weight: 600;}
 .cta-btn {
   background: linear-gradient(90deg, var(--main-blue), var(--accent-purple));
   color: #fff;
   padding: 13px 32px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 1.17em;
+  font-size: 1.15em;
   font-weight: bold;
   display: inline-block;
   margin-top: 18px;
   background-size: 200% auto;
   transition: background-position .3s, transform .22s;
-  box-shadow: 0 4px 16px rgba(19,116,224,0.14);
-  border: none;
-  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(19,116,224,0.12);
 }
 .cta-btn:hover {background-position: right center; transform: translateY(-2px);}
 .cta-btn.sm {font-size: 1em; padding: 10px 20px;}
@@ -100,149 +80,66 @@ body {
   background: #25d366;
   color: #fff;
   background-image: none;
-  width: 100%;
-  margin: 18px 0 0 0;
-  font-size: 1.05em;
 }
 .cta-btn.whatsapp:hover {background: #1fa84f;}
-
-.main-section {
+.center {text-align: center;}
+.center .cta-btn {margin-top: 18px;}
+.about-contact-section {
   background: #fff;
   border-radius: 22px;
-  margin: -40px auto 34px auto;
-  box-shadow: 0 2px 24px rgba(30,54,73,0.10);
-  padding: 36px 36px 32px 36px;
-  display: flex;
-  max-width: 1280px;
-  gap: 40px;
-  position: relative;
-  z-index: 6;
+  margin-top: -50px;
+  box-shadow: 0 2px 24px rgba(30,54,73,0.06);
+  padding: 38px 30px 28px 30px;
 }
-@media (max-width: 990px) {
-  .main-section { flex-direction: column; padding: 28px 10px 20px 10px; }
+.about-contact-container {
+  display: flex;
+  gap: 44px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .about-info {
-  flex: 1.1 1 62%;
-  min-width: 320px;
-  font-size: 1.09em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1 1 55%;
 }
 .logo-about {
-  width: 102px;
-  margin-bottom: 16px;
-  border-radius: 10px;
+  width: 108px; margin-bottom: 16px;
 }
 .about-info p {margin: 0 0 24px 0;}
 .contact-form {
-  flex: 1 1 40%;
+  flex: 1 1 38%;
   background: #f7f7fa;
-  border-radius: 13px;
-  padding: 28px 20px 16px 20px;
+  border-radius: 12px;
+  padding: 24px 18px 20px 18px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0 2px 14px rgba(19,116,224,0.09);
-  align-items: stretch;
-  min-width: 280px;
-  max-width: 400px;
-  margin: 0 auto;
+  box-shadow: 0 2px 14px rgba(19,116,224,0.05);
 }
-.contact-form h3 {margin-bottom: 14px;}
 .contact-form input {
-  padding: 13px 10px;
-  border-radius: 7px;
+  padding: 12px 10px;
+  border-radius: 6px;
   border: 1px solid #e0e7ef;
   margin-bottom: 10px;
   font-size: 1em;
-  outline: none;
-  transition: border .18s;
 }
-.contact-form input:focus {border-color: var(--main-blue);}
+.contact-form h3 {margin-bottom: 10px;}
+.contact-form .cta-btn,
 .contact-form .cta-btn.whatsapp {
-  width: 100%;
-  min-width: 120px;
+  margin-top: 12px;
+  width: 80%;
+  min-width: 140px;
   max-width: 100%;
-  margin: 18px 0 0 0;
   align-self: center;
-}
-.benefits-section {
-  padding: 28px 0 12px 0;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.benefits-row {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-.benefit-card {
-  background: #eef8fe;
-  border-radius: 13px;
-  box-shadow: 0 2px 8px rgba(30,54,73,0.08);
-  padding: 17px 18px 13px 18px;
-  display: flex;
-  align-items: center;
-  font-size: 1.08em;
-  gap: 11px;
-  min-width: 180px;
-}
-.benefit-card img {width: 31px;}
-.vision-section {
-  background: linear-gradient(120deg, #f6eaff 40%, #ffece7 100%);
-  border-radius: 20px;
-  min-height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 32px auto;
-  max-width: 1220px;
-  position: relative;
-}
-.vision-content {
-  color: #222;
   text-align: center;
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 34px 28px;
-  font-size: 1.11em;
+  box-sizing: border-box;
 }
-.vision-content h2 {font-size: 1.35em; font-weight: 700; margin-bottom: 10px;}
-.vision-content p {font-size: 1.08em;}
-.events-section {
-  background: linear-gradient(120deg, #e6fff3 40%, #f8ffff 100%);
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(30,54,73,0.06);
-  padding: 25px 18px 21px 18px;
-  margin: 0 auto 32px auto;
-  max-width: 920px;
-}
-.event-card {text-align: left;}
-.event-card b {font-size: 1.07em;}
-.event-card .cta-btn {margin-top: 10px;}
-footer {
-  background: var(--footer-bg);
-  color: #fff;
-  text-align: center;
-  padding: 25px 8px 22px 8px;
-  border-radius: 14px 14px 0 0;
-  margin-top: 34px;
-  font-size: 1em;
-}
-.footer-row {display: flex; flex-direction: column; gap: 7px;}
-.footer-row a {color: var(--main-yellow); text-decoration: underline; margin: 0 2px;}
-/* Responsive */
 @media (max-width: 900px) {
-  .main-section {flex-direction: column;}
-  .hero-logo { position: static; margin: 0 auto 15px auto; display: block; }
-  .benefits-row { flex-direction: column; gap: 12px;}
+  .about-contact-container {flex-direction: column; gap: 22px;}
+  .services-row, .benefits-row {flex-direction: column;}
+  .hero-logo {top: 16px; left: 18px; width: 72px;}
+  .hero-content {padding: 54px 5vw 54px 5vw;}
 }
 @media (max-width: 600px) {
-  .hero-content h1 {font-size: 1.25em;}
-  .hero-content {padding: 18px 4vw 14px 4vw;}
-  .main-section {padding: 14px 3vw;}
-  .about-info {font-size: 0.97em;}
-  .vision-content {padding: 16px 7px;}
-}
+  .hero-content h1 {font-size: 1.15em;}
+  .hero-content {padding: 44px 2vw 44px 2vw;}
+  .about-contact-section {padding: 18px 6px;}
+  .service-card, .benefit-card
