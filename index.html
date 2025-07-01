@@ -102,10 +102,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const heroImg = document.querySelector('.hero-bg-img');
+      const dividers = document.querySelectorAll('.parallax-divider');
 
       window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         heroImg.style.transform = 'translateY(' + scrolled * 0.3 + 'px)';
+        dividers.forEach(function (div) {
+          div.style.backgroundPosition = 'center ' + -(scrolled * 0.25) + 'px';
+        });
       });
     });
   </script>
