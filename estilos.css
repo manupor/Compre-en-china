@@ -315,8 +315,8 @@ img {
 footer {
   background: var(--footer-bg);
   color: #fff;
-  padding: 40px 10px;
-  font-size: 0.9em;
+  padding: 60px 15px;
+  font-size: 0.95em;
 }
 
 .footer-row {
@@ -325,24 +325,30 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  gap: 32px;
   text-align: center;
 }
 
-.footer-row > div {
+.footer-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
 }
 
-.footer-row a {
+.footer-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--main-blue);
+}
+
+.footer-links a {
   color: #fff;
   text-decoration: none;
   margin: 0 4px;
 }
 
-.footer-row a:hover {
+.footer-links a:hover {
   text-decoration: underline;
 }
 
