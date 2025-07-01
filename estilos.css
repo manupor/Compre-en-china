@@ -232,13 +232,14 @@ img {
   font-size: 1.6em;
   margin-bottom: 18px;
 }
-.benefits-row {
-  display: flex;
-  justify-content: center;
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 22px;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
+  list-style: none;
+  padding: 0;
 }
 .benefit-card {
   background: #fff;
