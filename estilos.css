@@ -273,8 +273,17 @@ footer {
   border-radius: 14px 14px 0 0;
   margin-top: 44px;
   box-shadow: 0 -3px 28px rgba(30,30,30,0.09);
+  width: 100%;
 }
-.footer-row {display: flex; flex-direction: column; gap: 7px;}
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 62vw;
+  max-width: 860px;
+  min-width: 320px;
+  margin: 0 auto;
+}
 .footer-row a {color: var(--china-yellow); text-decoration: underline; margin: 0 2px;}
 footer a:hover {color: var(--china-red);}
 
