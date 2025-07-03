@@ -29,6 +29,13 @@ body {
   overflow: hidden;
   background: url('naviera.jpg') center/cover no-repeat;
 }
+.logo-header {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 120px;
+  z-index: 4;
+}
 .hero-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
