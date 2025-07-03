@@ -1,54 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const heroBg = document.querySelector('.hero-bg');
-  const heroOverlay = document.querySelector('.hero-overlay');
-  const heroContent = document.querySelector('.hero-content');
-  const logoHero = document.querySelector('.logo-hero');
+// Parallax multilayer Compre en China IG hero
+window.addEventListener('DOMContentLoaded', () => {
+  const bg = document.getElementById('bg');
+  const logo = document.getElementById('logo');
+  const cloud1 = document.getElementById('clouds_1');
+  const cloud2 = document.getElementById('clouds_2');
+  const text = document.getElementById('text');
   const benefitCards = document.querySelectorAll('.benefit-card');
 
-  function clamp(val, min, max) {
-    return Math.max(min, Math.min(max, val));
-  }
-
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const heroHeight = heroBg.offsetHeight || 650;
-    const progress = clamp(scrollY / heroHeight, 0, 1);
+    let value = window.scrollY;
 
-    // Parallax background con movimiento más grande
-    if (heroBg) {
-      heroBg.style.backgroundPosition = `center ${scrollY * 0.55}px`;
-      heroBg.style.filter = `brightness(${1 - progress * 0.25}) blur(${progress * 2.5}px)`;
-      heroBg.style.transform = `scale(${1 + progress * 0.08})`;
+    // Fondo principal parallax
+    bg && (bg.style.transform = `translateY(${value * 0.25}px) scale(${1 + value/2600})`);
+
+    // Logo: sube, escala y fade out
+    if (logo) {
+      logo.style.transform = `translate(-50%, ${value * 0.18}px) scale(${1 - value/2900})`;
+      logo.style.opacity = `${1 - value/450}`;
     }
 
-    // Overlay: oscurece según scroll
-    if (heroOverlay) {
-      heroOverlay.style.background = 
-        `linear-gradient(120deg, rgba(19,16,25,${0.14 + progress * 0.34}), rgba(22,30,58,${0.11 + progress * 0.41}) 80%)`;
+    // Texto hero: sube y fade
+    if (text) {
+      text.style.transform = `translateX(-50%) translateY(-${value * 0.22}px)`;
+      text.style.opacity = `${1 - value/360}`;
     }
 
-    // Logo parallax (sube y escala, se desvanece suave)
-    if (logoHero) {
-      logoHero.style.transform =
-        `translateY(${scrollY * 0.22}px) scale(${1 - progress * 0.17})`;
-      logoHero.style.opacity = `${1 - progress * 1.2}`;
-    }
-
-    // Hero content (texto): se mueve arriba y fade out más suave
-    if (heroContent) {
-      heroContent.style.transform = `translateY(${scrollY * 0.12}px)`;
-      heroContent.style.opacity = `${1 - progress * 0.70}`;
-    }
-
-    // Fade in de los benefit-cards
-    benefitCards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 70) {
-        card.classList.add('visible');
-      }
-    });
-  });
-
-  // Trigger la animación al cargar
-  window.dispatchEvent(new Event('scroll'));
-});
+    // Nubes (si quieres más “ambiente”)
+    cloud1 && (cloud1.style.transform = `translateX(${value * 0.6}px)`);
+    cloud2
