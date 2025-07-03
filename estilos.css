@@ -1,119 +1,127 @@
-#top.hero-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  min-height: 650px;
-  overflow: hidden;
-  background: #fffdf6;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+:root {
+  --china-red: #e71e26;
+  --china-yellow: #fdd835;
+  --china-black: #191919;
+  --china-bg: #fffdf6;
+  --china-card-bg: #fff9f3;
+  --china-footer-bg: #1b1b1b;
 }
 
-#bg {
+/* ---- HERO EFFECTS ---- */
+.heroEffects {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.heroEffects .bg {
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  background-image: url('naviera.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1);
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(.4,0,.7,1);
+}
+.heroEffects .shade {
+  opacity: 0;
+  background: rgba(0, 0, 0, .8);
+  z-index: 3;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(.4,0,.7,1);
+}
+.heroEffects .title {
+  width: 100%;
   position: absolute;
   top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  object-fit: cover;
+  height: 100vh;
+}
+.heroEffects .text {
   z-index: 1;
-  filter: brightness(0.88) blur(0.3px);
-}
-
-/* CAPAS PARALLAX */
-#avion {
-  position: absolute;
-  top: 0; left: 50%;
-  width: 530px; max-width: 60vw;
-  transform: translate(-50%, 10px) scale(1.1);
-  z-index: 10;
-  filter: drop-shadow(0 12px 50px #0007);
-  pointer-events: none;
-  transition: transform 0.28s cubic-bezier(.7,0,.4,1);
-}
-
-#montacargas {
-  position: absolute;
-  left: 10vw;
-  bottom: 90px;
-  width: 300px; max-width: 23vw;
-  z-index: 14;
-  filter: drop-shadow(0 12px 24px #0007);
-  pointer-events: none;
-  transition: transform 0.28s cubic-bezier(.7,0,.4,1);
-}
-
-#skyline {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100vw;
-  height: 260px;
-  z-index: 11;
-  opacity: 0.94;
-  pointer-events: none;
-  transition: transform 0.38s cubic-bezier(.7,0,.4,1), opacity 0.2s;
-}
-
-#logo {
-  position: absolute;
-  left: 50%;
-  bottom: 170px;
-  width: 200px;
-  max-width: 30vw;
-  transform: translateX(-50%) scale(1.08);
-  z-index: 30;
-  filter: drop-shadow(0 4px 16px #e71e2677);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s, transform 0.28s cubic-bezier(.7,0,.4,1);
-}
-
-/* Nubes */
-#clouds_1, #clouds_2 {
-  position: absolute;
-  top: 20px;
-  width: 320px;
-  max-width: 40vw;
-  z-index: 7;
-  opacity: 0.95;
-  pointer-events: none;
-}
-#clouds_1 { left: 5vw; }
-#clouds_2 { right: 6vw; }
-
-/* Texto HERO */
-#text {
-  position: absolute;
-  left: 50%;
-  bottom: 70px;
-  transform: translateX(-50%);
-  color: #fff;
   text-align: center;
-  z-index: 35;
-  text-shadow: 0 4px 24px #0008, 0 2px 7px #000b;
-  width: 100vw;
-  font-size: 2.6em;
-  font-weight: 800;
-  margin: 0;
+  color: white;
+  padding: 4em 1em 2em 1em;
+  background: rgba(0, 0, 0, .4);
+  box-shadow: 0 8px 32px #0003;
+  border-radius: 22px;
+  max-width: 640px;
+  margin: 0 auto;
+  transition: margin-top 0.3s cubic-bezier(.4,0,.7,1);
+}
+.heroEffects .logo-hero {
+  max-width: 160px;
+  margin-bottom: 22px;
+  margin-top: 14px;
+  filter: drop-shadow(0 8px 40px #e71e2655);
+}
+.heroEffects h1 {
+  font-size: 2.7em;
+  font-weight: 900;
+  margin-bottom: 0.16em;
+  color: #fff;
   letter-spacing: 0.01em;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s;
+  text-shadow: 0 2px 18px #0007;
+}
+.heroEffects p {
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px #000a;
+  border: none;
+}
+.heroEffects .arrow {
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  z-index: 6;
+}
+.bouncy {
+  animation: Weeeeeeeeeee 3s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes Weeeeeeeeeee {
+  0% {transform: translate(0, 0px);}
+  11% {transform: translate(0, -25px) scaleX(.8);}
+  20% {transform: translate(0, 0px) scaleY(.8);}
+  28% {transform: translate(0, -10px);}
+  36% {transform: translate(0, 0px);}
+  100% {transform: translate(0, 0px);}
 }
 
-/* RESPONSIVE */
+/* Vertical center */
+.centerV {
+  display: table;
+  height: 100vh;
+  width: 100vw;
+}
+.centerV > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* ----------- MAIN Y RESTO DE TU ESTILO DE SIEMPRE (pega debajo tu CSS habitual) -------------- */
+body { font-family: 'Montserrat', Arial, sans-serif; margin:0; background: var(--china-bg);}
+.main-section {/*... etc ...*/}
+
+/* Responsive */
 @media (max-width: 800px) {
-  #avion { width: 330px; }
-  #montacargas { width: 150px; left: 2vw;}
-  #skyline { height: 120px; }
-  #logo { width: 120px; bottom: 100px;}
-  #text { font-size: 1.15em;}
-}
-
-@media (max-width: 500px) {
-  #avion { width: 90vw; }
-  #montacargas { width: 30vw; }
-  #skyline { height: 58px;}
-  #logo { width: 80px; bottom: 60px;}
-  #text { font-size: 1em;}
+  .heroEffects h1 { font-size: 1.2em;}
+  .heroEffects .logo-hero { max-width: 80px;}
+  .heroEffects .text { padding: 2em 0.5em;}
 }
