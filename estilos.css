@@ -11,13 +11,15 @@
 .heroEffects {
   height: 100vh;
   position: relative;
+  min-height: 500px;
   z-index: 1;
   top: 0;
   left: 0;
+  width: 100vw;
+  overflow: hidden;
 }
 .heroEffects .bg {
   height: 100vh;
-  position: fixed;
   width: 100vw;
   background-image: url('naviera.jpg');
   background-repeat: no-repeat;
@@ -25,55 +27,61 @@
   background-position: center center;
   transform: scale(1);
   z-index: 1;
+  position: absolute;
+  top: 0; left: 0;
   transition: transform 0.3s cubic-bezier(.4,0,.7,1);
 }
 .heroEffects .shade {
   opacity: 0;
   background: rgba(0, 0, 0, .8);
-  z-index: 3;
+  z-index: 2;
   height: 100vh;
-  position: fixed;
   width: 100vw;
+  position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(.4,0,.7,1);
 }
 .heroEffects .title {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0; left: 0;
-  height: 100vh;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .heroEffects .text {
-  z-index: 1;
+  z-index: 4;
   width: 100vw;
+  max-width: 620px;
   text-align: center;
   color: white;
-  padding: 4em 1em 2em 1em;
-  background: rgba(0, 0, 0, .4);
+  padding: 3.5em 1em 2em 1em;
+  background: rgba(0, 0, 0, .42);
   box-shadow: 0 8px 32px #0003;
   border-radius: 22px;
-  max-width: 640px;
   margin: 0 auto;
   transition: margin-top 0.3s cubic-bezier(.4,0,.7,1);
 }
 .heroEffects .logo-hero {
-  max-width: 160px;
-  margin-bottom: 22px;
-  margin-top: 14px;
+  max-width: 140px;
+  margin-bottom: 20px;
+  margin-top: 12px;
   filter: drop-shadow(0 8px 40px #e71e2655);
 }
 .heroEffects h1 {
-  font-size: 2.7em;
+  font-size: 2.5em;
   font-weight: 900;
-  margin-bottom: 0.16em;
+  margin-bottom: 0.2em;
   color: #fff;
   letter-spacing: 0.01em;
   text-shadow: 0 2px 18px #0007;
 }
 .heroEffects p {
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #fff;
   font-weight: 400;
   margin-top: 0;
@@ -83,14 +91,14 @@
   border: none;
 }
 .heroEffects .arrow {
-  position: fixed;
+  position: absolute;
   left: 50%;
   margin-left: -20px;
-  bottom: 0;
+  bottom: 32px;
   width: 40px;
   height: 40px;
   opacity: 1;
-  z-index: 6;
+  z-index: 5;
 }
 .bouncy {
   animation: Weeeeeeeeeee 3s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -106,22 +114,24 @@
 
 /* Vertical center */
 .centerV {
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
 }
-.centerV > div {
-  display: table-cell;
-  vertical-align: middle;
-}
 
-/* ----------- MAIN Y RESTO DE TU ESTILO DE SIEMPRE (pega debajo tu CSS habitual) -------------- */
-body { font-family: 'Montserrat', Arial, sans-serif; margin:0; background: var(--china-bg);}
-.main-section {/*... etc ...*/}
-
-/* Responsive */
 @media (max-width: 800px) {
-  .heroEffects h1 { font-size: 1.2em;}
+  .heroEffects h1 { font-size: 1.3em;}
   .heroEffects .logo-hero { max-width: 80px;}
   .heroEffects .text { padding: 2em 0.5em;}
 }
+
+/* ----------- MAIN Y RESTO DE TU ESTILO -------------- */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin:0;
+  background: var(--china-bg);
+}
+.main-section {/* tu código previo... */}
+/* ... agrega aquí el resto de tus estilos ... */
