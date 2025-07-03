@@ -6,7 +6,7 @@
   --china-footer-bg: #1b1b1b;
 }
 
-/* ---- HERO PARALLAX (con altura reducida y SIN recuadro en el texto) ---- */
+/* ---- HERO PARALLAX (con recuadro y altura reducida) ---- */
 .heroEffects,
 .heroEffects .bg,
 .heroEffects .shade,
@@ -53,6 +53,8 @@
   justify-content: center;
   align-items: center;
 }
+
+/* ---- RECUADRO premium ---- */
 .heroEffects .text {
   z-index: 4;
   width: 100vw;
@@ -61,8 +63,13 @@
   color: #fff;
   padding: 2.5em 1.5em 1.6em 1.5em;
   margin: 0 auto;
+  /* Recuadro glassy */
+  background: rgba(10, 10, 10, 0.56);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #0006, 0 1.5px 12px #e71e2620;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   transition: margin-top 0.3s cubic-bezier(.4,0,.7,1);
-  /* SIN fondo, SIN sombra, SIN borde */
 }
 .heroEffects .logo-hero {
   max-width: 120px;
