@@ -1,30 +1,48 @@
-// Parallax multilayer Compre en China IG hero
-window.addEventListener('DOMContentLoaded', () => {
-  const bg = document.getElementById('bg');
+document.addEventListener('DOMContentLoaded', () => {
+  const avion = document.getElementById('avion');
+  const montacargas = document.getElementById('montacargas');
+  const skyline = document.getElementById('skyline');
   const logo = document.getElementById('logo');
+  const text = document.getElementById('text');
   const cloud1 = document.getElementById('clouds_1');
   const cloud2 = document.getElementById('clouds_2');
-  const text = document.getElementById('text');
-  const benefitCards = document.querySelectorAll('.benefit-card');
 
   window.addEventListener('scroll', () => {
-    let value = window.scrollY;
+    const y = window.scrollY;
 
-    // Fondo principal parallax
-    bg && (bg.style.transform = `translateY(${value * 0.25}px) scale(${1 + value/2600})`);
+    // Avión baja y escala
+    if(avion) avion.style.transform = `translate(-50%, ${10 + y * 0.19}px) scale(${1.1 - y/2600})`;
 
-    // Logo: sube, escala y fade out
-    if (logo) {
-      logo.style.transform = `translate(-50%, ${value * 0.18}px) scale(${1 - value/2900})`;
-      logo.style.opacity = `${1 - value/450}`;
+    // Montacargas se mueve hacia la derecha y sube
+    if(montacargas) montacargas.style.transform = `translateY(-${y * 0.08}px) translateX(${y * 0.32}px)`;
+
+    // Skyline sube (aparece)
+    if(skyline) skyline.style.transform = `translateY(-${y * 0.23}px)`;
+
+    // Logo aparece cuando skyline visible y escala
+    if(logo) {
+      if(y > 110) {
+        logo.style.opacity = '1';
+        logo.style.transform = `translateX(-50%) scale(${1.08 - y/2600})`;
+      } else {
+        logo.style.opacity = '0';
+      }
     }
 
-    // Texto hero: sube y fade
-    if (text) {
-      text.style.transform = `translateX(-50%) translateY(-${value * 0.22}px)`;
-      text.style.opacity = `${1 - value/360}`;
+    // Texto aparece después de 120px de scroll
+    if(text) {
+      if(y > 120) {
+        text.style.opacity = '1';
+      } else {
+        text.style.opacity = '0';
+      }
     }
 
-    // Nubes (si quieres más “ambiente”)
-    cloud1 && (cloud1.style.transform = `translateX(${value * 0.6}px)`);
-    cloud2
+    // Nubes parallax horizontal
+    cloud1 && (cloud1.style.transform = `translateX(${y * 0.3}px)`);
+    cloud2 && (cloud2.style.transform = `translateX(-${y * 0.3}px)`);
+  });
+
+  // Trigger para aparecer logo/texto en reload
+  window.dispatchEvent(new Event('scroll'));
+});
