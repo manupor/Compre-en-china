@@ -33,8 +33,10 @@ body {
   left: 0; top: 0; width: 100vw; height: 100%;
   background: url('naviera.jpg') center center / cover no-repeat;
   z-index: 1;
-  will-change: background-position;
-  transition: background-position 0.18s cubic-bezier(.4,0,.2,1);
+  will-change: background-position, filter, transform;
+  transition: background-position 0.18s cubic-bezier(.4,0,.2,1), 
+              filter 0.26s cubic-bezier(.45,0,.34,1), 
+              transform 0.18s cubic-bezier(.42,0,.33,1);
 }
 .hero-overlay {
   position: absolute;
@@ -43,6 +45,7 @@ body {
   background: linear-gradient(120deg, rgba(231,30,38,0.11), rgba(22,30,58,0.13) 80%);
   z-index: 2;
   pointer-events: none;
+  transition: background 0.3s cubic-bezier(.44,0,.23,1);
 }
 .hero-content {
   z-index: 3;
@@ -66,7 +69,7 @@ body {
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  transition: box-shadow 0.3s, transform 0.22s;
+  transition: box-shadow 0.3s, transform 0.3s, opacity 0.2s;
 }
 .hero-content h1 {
   font-size: 2.5em;
@@ -283,14 +286,4 @@ footer a:hover {color: var(--china-red);}
   }
   .about-contact-section,
   .benefits-block-section {
-    flex-direction: column;
-    gap: 22px;
-    padding: 22px 8px 14px 8px;
-  }
-  .contact-form {max-width: 99vw;}
-  .logo-about {margin: 0 auto 10px auto;}
-}
-@media (max-width: 700px) {
-  .main-section {
-    width: 99vw;
-    max-width: 100vw;
+    flex-direction: column
