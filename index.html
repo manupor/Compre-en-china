@@ -8,16 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-      /* Suaviza el scroll */
-      overscroll-behavior: none;
-    }
-    body {
-      background: var(--china-bg, #fffdf6);
-      margin: 0;
-      padding: 0;
-    }
+    html { scroll-behavior: smooth; overscroll-behavior: none; }
+    body { background: var(--china-bg, #fffdf6); margin: 0; padding: 0; }
+
     /* --- PARALLAX HERO --- */
     .hero-section {
       position: relative;
@@ -28,8 +21,9 @@
       justify-content: center;
       background: linear-gradient(120deg, rgba(231,30,38,0.12) 0%, rgba(253,216,53,0.06) 100%), 
         url('images/naviera.jpg') center center / cover fixed no-repeat;
-      /* ^^^ Parallax effect */
       overflow: hidden;
+      background-position: center 0;
+      transition: background-position 0.17s cubic-bezier(.4,0,.2,1);
     }
     .hero-overlay {
       position: absolute;
@@ -52,6 +46,7 @@
       flex-direction: column;
       align-items: center;
       backdrop-filter: blur(0.5px);
+      transition: transform 0.22s, opacity 0.22s;
     }
     .logo-hero {
       max-width: 165px;
@@ -61,7 +56,7 @@
       border-radius: 20px;
       box-shadow: 0 2px 14px rgba(231,30,38,0.03);
       padding: 12px 18px 10px 18px;
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, transform 0.22s;
     }
     .hero-content h1 {
       font-size: 2.5em;
@@ -127,7 +122,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-    /* --- BLOQUES BLANCOS --- */
     .about-contact-section,
     .benefits-block-section {
       background: #fff;
@@ -267,9 +261,7 @@
       box-shadow: 0 -2px 24px rgba(231,30,38,0.06);
       letter-spacing: 0.01em;
     }
-    .footer-row {
-      display: flex; flex-direction: column; gap: 7px;
-    }
+    .footer-row { display: flex; flex-direction: column; gap: 7px; }
     .footer-row a {
       color: var(--china-yellow, #fdd835);
       text-decoration: underline;
@@ -277,7 +269,7 @@
       font-weight: 500;
       transition: color 0.16s;
     }
-    .footer-row a:hover {color: var(--china-red, #e71e26);}
+    .footer-row a:hover { color: var(--china-red, #e71e26);}
     /* ---- RESPONSIVE ---- */
     @media (max-width: 1100px) {
       .main-section { width: 92vw; max-width: 98vw;}
@@ -337,7 +329,6 @@
         <h3>Beneficios de trabajar con Compre en China IG</h3>
         <div class="benefits-row">
           <div class="benefit-card">
-            <!-- TARIFA SVG -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="16" r="15" />
               <text x="10" y="22" font-family="Montserrat" font-size="16">$</text>
@@ -345,7 +336,6 @@
             Tarifas claras y sin letra pequeña
           </div>
           <div class="benefit-card">
-            <!-- ENVIOS SVG -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect x="4" y="10" width="24" height="12" rx="2"/>
               <polyline points="8,22 8,28 24,28 24,22"/>
@@ -355,7 +345,6 @@
             Entregas semanales sin fallas
           </div>
           <div class="benefit-card">
-            <!-- WHATSAPP SVG -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="16" r="15"/>
               <path d="M11 24l2.1-5A6.5 6.5 0 1117 10a6.5 6.5 0 01-3.9 9.1l-2.1 5z"/>
@@ -364,7 +353,6 @@
             Seguimiento por WhatsApp en tiempo real
           </div>
           <div class="benefit-card">
-            <!-- B2B SVG -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect x="7" y="10" width="8" height="12" rx="2"/>
               <rect x="17" y="10" width="8" height="12" rx="2"/>
@@ -374,7 +362,6 @@
             Expertos en importaciones B2C y B2B
           </div>
           <div class="benefit-card">
-            <!-- ADUANA SVG -->
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect x="8" y="10" width="16" height="12" rx="2"/>
               <rect x="13" y="17" width="6" height="5" rx="1"/>
@@ -403,5 +390,8 @@
       </div>
     </div>
   </footer>
+
+  <!-- Parallax JS -->
+  <script src="parallax.js"></script>
 </body>
 </html>
