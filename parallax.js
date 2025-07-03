@@ -33,3 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Trigger la animación al cargar
   window.dispatchEvent(new Event('scroll'));
 });
+ 
