@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+
     // Efecto parallax para la imagen de fondo real
     heroBg.style.backgroundPosition = `center ${scrollY * 0.32}px`;
 
@@ -33,4 +34,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Trigger la animación al cargar
   window.dispatchEvent(new Event('scroll'));
 });
- 
