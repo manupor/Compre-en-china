@@ -1,20 +1,31 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const shade = document.querySelector('.heroEffects .shade');
+// Parallax HERO - versión rápida y fluida
+document.addEventListener('DOMContentLoaded', function() {
   const bg = document.querySelector('.heroEffects .bg');
+  const shade = document.querySelector('.heroEffects .shade');
   const text = document.querySelector('.heroEffects .text');
+  const arrow = document.querySelector('.heroEffects .arrow');
 
-  window.addEventListener('scroll', function () {
-    const scrolled = window.scrollY;
-    // Opacidad de la sombra: desde 0 hasta máx 0.8 (cuando scroll=500px)
-    let shadeOpacity = Math.min(scrolled / 500, 0.8);
-    shade.style.opacity = shadeOpacity;
+  // Opcional: auto scroll con flecha
+  if (arrow) {
+    arrow.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+  }
 
-    // Zoom suave del fondo (por cada 1000px de scroll sube un 0.4x)
-    let scale = 1 + scrolled * 0.0004;
-    bg.style.transform = `scale(${scale})`;
+  window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY;
 
-    // Margen superior del texto: sube lento con scroll
-    let mt = scrolled * 0.2;
-    text.style.marginTop = `-${mt + 1}px`;
+    // Parallax ultra rápido:
+    const zoom = 1 + scrollY * 0.0015;           // Sube para más "zoom"
+    const opacity = Math.min(scrollY / 280, 0.65); // Sombra aparece más rápido
+    const marginTop = -scrollY * 0.56;           // Texto sube más con el scroll
+
+    if (bg) bg.style.transform = `scale(${zoom})`;
+    if (shade) shade.style.opacity = opacity;
+    if (text) text.style.marginTop = `${marginTop}px`;
   });
 });
