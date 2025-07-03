@@ -27,12 +27,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-.hero-bg-img {
-  position: absolute;
-  left: 0; top: 0; width: 100vw; height: 100%;
-  object-fit: cover;
-  z-index: 1;
+  background: url('naviera.jpg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
@@ -148,6 +143,7 @@ body {
   box-shadow: 0 2px 14px rgba(19,116,224,0.04);
   min-width: 270px;
   max-width: 390px;
+  margin: 0 auto;
 }
 .contact-form h3 {
   margin-bottom: 14px;
