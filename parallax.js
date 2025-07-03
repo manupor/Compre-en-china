@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
   const logoHero = document.querySelector('.logo-hero');
   const benefitCards = document.querySelectorAll('.benefit-card');
+  const scrollBtn = document.getElementById('scrollTopBtn');
 
   if (!heroBg) return;
 
@@ -18,9 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
       heroContent.style.transform = `translateY(${scrollY * 0.10}px)`;
       heroContent.style.opacity = `${1 - Math.min(scrollY / 650, 0.16)}`;
     }
-    if (logoHero) {
-      logoHero.style.transform = `translateY(${scrollY * 0.06}px) scale(${1 - scrollY / 6500})`;
-    }
+      if (logoHero) {
+        logoHero.style.transform = `translateY(${scrollY * 0.06}px) scale(${1 - scrollY / 6500})`;
+      }
+
+      if (scrollBtn) {
+        if (scrollY > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      }
 
     // Fade in de los benefit-cards
     benefitCards.forEach(card => {
@@ -30,6 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Trigger la animación al cargar
   window.dispatchEvent(new Event('scroll'));
