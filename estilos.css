@@ -6,7 +6,7 @@
   --china-footer-bg: #1b1b1b;
 }
 
-/* ---- HERO PARALLAX (con altura reducida) ---- */
+/* ---- HERO PARALLAX (con altura reducida y SIN recuadro en el texto) ---- */
 .heroEffects,
 .heroEffects .bg,
 .heroEffects .shade,
@@ -60,11 +60,9 @@
   text-align: center;
   color: #fff;
   padding: 2.5em 1.5em 1.6em 1.5em;
-  background: rgba(0,0,0,0.28);
-  box-shadow: 0 8px 32px #0004;
-  border-radius: 22px;
   margin: 0 auto;
   transition: margin-top 0.3s cubic-bezier(.4,0,.7,1);
+  /* SIN fondo, SIN sombra, SIN borde */
 }
 .heroEffects .logo-hero {
   max-width: 120px;
