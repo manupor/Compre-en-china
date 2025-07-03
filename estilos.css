@@ -7,7 +7,14 @@
   --china-footer-bg: #1b1b1b;
 }
 
-/* HERO con imagen de fondo REAL y capa extra */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--china-bg);
+  color: var(--china-black);
+  margin: 0;
+  padding: 0;
+}
+
 .hero-section {
   position: relative;
   width: 100vw;
@@ -16,6 +23,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: none !important;
 }
 .hero-bg {
   position: absolute;
@@ -77,4 +85,5 @@
   font-size: 1.04em;
   letter-spacing: 0.02em;
 }
-/* El resto igual al CSS anterior... */
+
+/* CONTINÚA CON EL RESTO DEL CSS DE TUS SECCIONES... */
