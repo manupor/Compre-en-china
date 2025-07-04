@@ -71,6 +71,16 @@ img { max-width: 100%; display: block; }
   color: var(--china-yellow);
   font-weight: 700;
 }
+.logo-hero {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.22s, opacity 0.22s;
+}
+
 
 /* ACERCA + CONTACTO */
 .about-contact-section {
@@ -155,6 +165,11 @@ img { max-width: 100%; display: block; }
 }
 .service-card small {
   color: #474747;
+}
+.service-card img, .service-card svg {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
 }
 
 /* BENEFICIOS */
