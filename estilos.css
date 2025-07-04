@@ -52,6 +52,9 @@ img { max-width: 100%; display: block; }
   background: url('naviera.jpg') center center/cover no-repeat;
   overflow: hidden;
 }
+.hero-bg {
+  background: url("naviera.jpg") center center/cover no-repeat;
+}
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
