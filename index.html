@@ -7,11 +7,96 @@
   <link rel="stylesheet" href="estilos.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .hero-section {
+      position: relative;
+      width: 100vw;
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+      min-height: 440px;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100%;
+      background: linear-gradient(120deg, rgba(30,30,30,0.23) 0%, rgba(255,255,255,0.03) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      color: #fff;
+      text-align: center;
+      max-width: 840px;
+      margin: auto;
+      padding: 60px 6vw 60px 6vw;
+      background: rgba(34,37,42,0.18);
+      border-radius: 28px;
+      box-shadow: 0 6px 36px rgba(0,0,0,0.12);
+    }
+    .logo-hero {
+      max-width: 180px;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.20));
+    }
+    .hero-content h1 {
+      font-size: 2.7em;
+      margin-bottom: 22px;
+      font-weight: 800;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.33);
+    }
+    .hero-content p {
+      font-size: 1.23em;
+      margin-bottom: 0.6em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+    .hero-years {
+      font-weight: 700;
+      color: #ffd800;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.30);
+    }
+    .cta-btn {
+      background: linear-gradient(90deg, #e71e26, #fd902a);
+      color: #fff;
+      padding: 13px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.15em;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 18px;
+      background-size: 200% auto;
+      transition: background-position .3s, transform .22s;
+      box-shadow: 0 4px 16px rgba(19,116,224,0.14);
+      border: none;
+    }
+    .cta-btn:hover {background-position: right center; transform: translateY(-2px);}
+    @media (max-width: 800px) {
+      .hero-content h1 {font-size: 1.5em;}
+      .hero-content {padding: 40px 2vw;}
+      .logo-hero {max-width: 120px;}
+    }
+  </style>
 </head>
 <body>
   <!-- HERO FULL WIDTH -->
   <section class="hero-section">
-    <div class="hero-bg"></div>
+    <video class="hero-bg-video" autoplay loop muted playsinline preload="auto">
+      <source src="https://compreenchina.s3.us-east-2.amazonaws.com/twilight-foshan-city-famous-riverside-park-bay-sq-2024-11-08-18-45-34-utc.mov" type="video/mp4">
+      Tu navegador no soporta videos en HTML5.
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="Logo_página.svg" alt="Compre en China IG Logo" class="logo-hero" draggable="false">
