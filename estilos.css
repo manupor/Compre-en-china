@@ -55,8 +55,8 @@ body {
   right: -36px;
   bottom: -36px;
   /* Blur suave y sutil, ajusta el px si quieres más/menos */
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   /* Ligera opacidad para mantener el fondo, pero no recuadro */
   background: rgba(34,37,42,0.06);
   border-radius: 32px;
