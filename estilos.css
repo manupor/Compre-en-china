@@ -241,5 +241,244 @@ body {
   font-size: 1.5em;
   color: var(--china-red);
   font-weight: 800;
-  text-align
- 
+  text-align: center;
+  margin-bottom: 16px;
+}
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+}
+.news-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(231,30,38,0.05);
+  padding: 24px 18px 18px 18px;
+  font-size: 1em;
+  color: var(--china-black);
+  max-width: 340px;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.news-item .cta-btn.sm {
+  margin-top: 12px;
+}
+
+/* SECCIÓN CERTIFICACIONES */
+.certification-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.certification-content p {
+  font-size: 1.07em;
+  color: var(--china-black);
+  margin-bottom: 12px;
+}
+.certification-logos {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.certification-logos img {
+  height: 44px;
+  width: auto;
+  max-width: 120px;
+  filter: grayscale(0.2);
+  opacity: 0.9;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.certification-logos img:hover {
+  filter: grayscale(0) brightness(1.1);
+  opacity: 1;
+}
+
+/* SECCIÓN TESTIMONIOS */
+.testimonials-section h3 {
+  font-size: 1.5em;
+  color: var(--china-red);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.testimonials-slider {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 22px;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(231,30,38,0.06);
+  padding: 30px 22px 22px 22px;
+  min-width: 230px;
+  max-width: 320px;
+  text-align: left;
+  color: var(--china-black);
+  font-size: 1em;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* FORMULARIO Y SECCIONES GENERALES */
+.main-section {
+  width: 62vw;
+  min-width: 320px;
+  max-width: 860px;
+  margin: 0 auto 42px auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+.about-contact-section {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 26px rgba(231,30,38,0.06), 0 2px 12px rgba(253,216,53,0.07);
+  padding: 36px 30px 26px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 0;
+}
+.about-info {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 370px;
+  background: #fffdf6;
+  border-radius: 16px;
+  padding: 24px 14px 18px 14px;
+  box-shadow: 0 2px 14px rgba(231,30,38,0.04);
+  gap: 12px;
+  margin: 0 auto;
+}
+.contact-form h3 {
+  text-align: center;
+  width: 100%;
+}
+.contact-form input {
+  padding: 12px 10px;
+  border-radius: 7px;
+  border: 1.2px solid var(--china-yellow);
+  margin-bottom: 10px;
+  font-size: 1em;
+  background: #fff;
+  color: var(--china-black);
+  outline: none;
+  transition: border-color 0.19s;
+}
+.contact-form input:focus { border-color: var(--china-red);}
+.contact-form .cta-btn,
+.contact-form .cta-btn.whatsapp {
+  width: 90%;
+  min-width: 130px;
+  max-width: 98%;
+  align-self: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* BOTONES */
+.cta-btn {
+  background: linear-gradient(90deg, var(--china-red) 0%, var(--china-yellow) 100%);
+  color: #fff;
+  padding: 13px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.15em;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 24px;
+  background-size: 200% auto;
+  transition: background-position .3s, transform .22s, box-shadow 0.18s;
+  box-shadow: 0 6px 18px rgba(231,30,38,0.09);
+  border: none;
+  outline: none;
+}
+.cta-btn:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 34px rgba(231,30,38,0.13);
+}
+.cta-btn.sm {font-size: 1em; padding: 10px 22px;}
+.cta-btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+  background-image: none;
+  width: 94%;
+  margin: 18px auto 0 auto;
+  display: block;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(37,211,102,0.09);
+}
+.cta-btn.whatsapp:hover {background: #1fa84f;}
+
+/* FOOTER */
+footer {
+  background: var(--china-footer-bg);
+  color: #fff;
+  text-align: center;
+  padding: 28px 8px;
+  border-radius: 14px 14px 0 0;
+  margin-top: 44px;
+  box-shadow: 0 -3px 28px rgba(30,30,30,0.09);
+}
+.footer-row {display: flex; flex-direction: column; gap: 7px;}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .services-row, .benefits-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card, .benefit-card {
+    max-width: 96vw;
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .main-section {
+    width: 96vw;
+    min-width: 0;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero-content {
+    padding: 22px 4vw 22px 4vw;
+  }
+  .vision-content {
+    padding: 28px 3vw 28px 3vw;
+  }
+}
+@media (max-width: 500px) {
+  .hero-content h1, .services-title, .benefits-section h3 {
+    font-size: 1.14em;
+  }
+  .hero-section {
+    min-height: 32vh;
+  }
+  .logo-hero {
+    max-width: 80px !important;
+  }
+  .cr-flag {
+    max-width: 36px;
+  }
+}
