@@ -16,6 +16,9 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.65;
+  width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -79,6 +82,28 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 2px 26px rgba(231,30,38,0.06), 0 2px 12px rgba(253,216,53,0.07);
   margin-bottom: 3.5rem;
   padding: 2.7rem 2.3rem;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.about-contact-section .container-fluid {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+}
+.about-contact-section .row {
+  min-height: 440px;
+  margin: 0;
+  padding: 0;
+}
+.about-contact-section .col-lg-6 {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 48px 40px 48px;
+  background: #fff;
 }
 .about-contact-section img {
   max-width: 170px;
@@ -88,25 +113,37 @@ img { max-width: 100%; display: block; }
   font-size: 1.1em;
   margin-bottom: 8px;
   color: var(--china-black);
+  text-align: left;
 }
 .about-contact-section .btn-danger {
   background: var(--china-red);
   color: #fff;
 }
+.about-contact-section .text-start {
+  text-align: left !important;
+}
 
-.contact-form {
+.about-contact-section .bg-light {
+  background: #fffdf6 !important;
+}
+
+/* Contact form */
+#contacto {
   background: #fffdf6;
   border-radius: 18px;
   box-shadow: 0 2px 14px rgba(231,30,38,0.04);
   padding: 24px 18px 18px 18px;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 400px;
 }
-.contact-form h3 {
+#contacto h3 {
   color: var(--china-red);
   font-weight: 800;
   text-align: center;
   margin-bottom: 20px;
 }
-.contact-form input {
+#contacto input {
   padding: 12px 10px;
   border-radius: 7px;
   border: 1.2px solid var(--china-yellow);
@@ -117,13 +154,20 @@ img { max-width: 100%; display: block; }
   outline: none;
   transition: border-color 0.19s;
 }
-.contact-form input:focus { border-color: var(--china-red); }
-.contact-form .btn-success {
+#contacto input:focus { border-color: var(--china-red); }
+#contacto .btn-success {
   width: 100%;
   font-size: 1.13em;
   padding: 10px;
   border-radius: 9px;
   font-weight: 700;
+}
+
+/* Centrar el botón de agendar debajo del form */
+.about-contact-section .w-100.text-center.mt-3 {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
 /* SERVICIOS */
@@ -249,12 +293,28 @@ footer a:hover { color: var(--china-red); }
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .about-contact-section .row {
+    flex-direction: column !important;
+  }
+  .about-contact-section .col-lg-6 {
+    padding: 32px 12px !important;
+    text-align: center !important;
+    min-height: auto;
+    align-items: center;
+  }
+  .about-contact-section .text-start {
+    text-align: center !important;
+  }
+  .about-contact-section p {
+    text-align: center !important;
+  }
 }
+
 @media (max-width: 600px) {
   .hero-section h1 { font-size: 1.35em; }
   .hero-section .lead, .hero-section p { font-size: 0.98em; }
   .service-card, .benefit-card { min-width: 96vw; }
   .about-contact-section, .services-section, .benefits-section, .vision-section, .news-section, .certifications-section, .testimonials-section { border-radius: 0; }
-  .container { padding-left: 8px; padding-right: 8px; }
+  .container, .container-fluid { padding-left: 8px !important; padding-right: 8px !important; }
   .vision-section .container > .row > .col-lg-10 { padding: 28px 4px; }
 }
