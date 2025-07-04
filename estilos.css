@@ -26,7 +26,14 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
   background: url('medios-de-transporte-logisticos-junto-con-hologramas-tecnologicos-y-futuristas.jpg') center center / cover no-repeat;
+  will-change: background-position;
+  z-index: 1;
 }
 .hero-content {
   z-index: 2;
