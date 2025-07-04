@@ -21,7 +21,7 @@ body {
 .hero-section {
   position: relative;
   width: 100vw;
-  min-height: 44vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +47,17 @@ body {
   background: center center / cover no-repeat;
   will-change: transform;
   z-index: -1;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .hero-content {
   z-index: 2;
@@ -528,7 +539,7 @@ footer {
     font-size: 1.14em;
   }
   .hero-section {
-    min-height: 32vh;
+    min-height: 70vh;
   }
   .logo-hero {
     max-width: 80px !important;

@@ -3,8 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroBg = document.querySelector('.hero-bg');
   const heroContent = document.querySelector('.hero-content');
   const logoHero = document.querySelector('.logo-hero');
-  const benefitCards = document.querySelectorAll('.benefit-card');
-  const parallaxBgs = document.querySelectorAll('.parallax-section .parallax-bg');
+  const benefitCards = document.querySelectorAll('.benefit-item');
+  const parallaxBgs = document.querySelectorAll('.parallax-section .parallax-bg:not(.hero-bg)');
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => observer.observe(el));
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -23,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     parallaxBgs.forEach(bg => {
       const offset = scrollY - bg.parentElement.offsetTop;
-      bg.style.transform = `translateY(${offset * 0.25}px)`;
+      const speed = parseFloat(bg.dataset.speed || '0.25');
+      bg.style.transform = `translateY(${offset * speed}px)`;
     });
 
-    // Fade in de los benefit-cards
     benefitCards.forEach(card => {
       const rect = card.getBoundingClientRect();
       if (rect.top < window.innerHeight - 70) {
