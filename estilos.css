@@ -1,23 +1,3 @@
-:root {
-  --china-red: #e71e26;
-  --china-yellow: #fdd835;
-  --china-black: #191919;
-  --china-bg: #fffdf6;
-  --china-card-bg: #fff9f3;
-  --china-footer-bg: #1b1b1b;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: var(--china-bg);
-  color: var(--china-black);
-  margin: 0;
-  padding: 0;
-}
-
-/* HERO SECTION */
 .hero-section {
   position: relative;
   width: 100vw;
@@ -28,6 +8,7 @@ body {
   overflow: hidden;
   background: none !important;
 }
+
 .hero-bg-video {
   position: absolute;
   left: 0; top: 0;
@@ -37,6 +18,7 @@ body {
   pointer-events: none;
   min-height: 440px;
 }
+
 .hero-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
@@ -46,6 +28,8 @@ body {
   pointer-events: none;
   transition: background 0.3s cubic-bezier(.44,0,.23,1);
 }
+
+/* AQUI VA EL CAMBIO IMPORTANTE */
 .hero-content {
   z-index: 3;
   position: relative;
@@ -57,12 +41,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  backdrop-filter: blur(0.5px);
-  background: rgba(34,37,42,0.18);
+  /* CAMBIO DE BLUR Y FONDO */
+  backdrop-filter: blur(12px);
+  background: rgba(34,37,42,0.42);  /* Puedes ajustar a 0.38 o 0.45 según tu gusto */
   border-radius: 28px;
   box-shadow: 0 6px 36px rgba(0,0,0,0.12);
   transition: transform 0.22s, opacity 0.22s;
 }
+
 .logo-hero {
   max-width: 165px;
   margin-bottom: 24px;
@@ -96,188 +82,3 @@ body {
   letter-spacing: 0.02em;
   text-shadow: 0 1px 8px rgba(0,0,0,0.18);
 }
-
-/* BOTONES */
-.cta-btn {
-  background: linear-gradient(90deg, var(--china-red) 0%, var(--china-yellow) 100%);
-  color: #fff;
-  padding: 13px 32px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1.15em;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 24px;
-  background-size: 200% auto;
-  transition: background-position .3s, transform .22s, box-shadow 0.18s;
-  box-shadow: 0 6px 18px rgba(231,30,38,0.09);
-  border: none;
-  outline: none;
-}
-.cta-btn:hover {
-  background-position: right center;
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 34px rgba(231,30,38,0.13);
-}
-.cta-btn.sm {font-size: 1em; padding: 10px 22px;}
-.cta-btn.whatsapp {
-  background: #25d366;
-  color: #fff;
-  background-image: none;
-  width: 94%;
-  margin: 18px auto 0 auto;
-  display: block;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(37,211,102,0.09);
-}
-.cta-btn.whatsapp:hover {background: #1fa84f;}
-
-/* MAIN SECTION */
-.main-section {
-  width: 62vw;
-  min-width: 320px;
-  max-width: 860px;
-  margin: 0 auto 42px auto;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* CENTRADO FORMULARIO Y PÁRRAFO */
-.about-contact-section {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 2px 26px rgba(231,30,38,0.06), 0 2px 12px rgba(253,216,53,0.07);
-  padding: 36px 30px 26px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 0;
-}
-.about-info {
-  text-align: center;
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 10px;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 370px;
-  background: #fffdf6;
-  border-radius: 16px;
-  padding: 24px 14px 18px 14px;
-  box-shadow: 0 2px 14px rgba(231,30,38,0.04);
-  gap: 12px;
-  margin: 0 auto;
-}
-.contact-form h3 {
-  text-align: center;
-  width: 100%;
-}
-.contact-form input {
-  padding: 12px 10px;
-  border-radius: 7px;
-  border: 1.2px solid var(--china-yellow);
-  margin-bottom: 10px;
-  font-size: 1em;
-  background: #fff;
-  color: var(--china-black);
-  outline: none;
-  transition: border-color 0.19s;
-}
-.contact-form input:focus { border-color: var(--china-red);}
-.contact-form .cta-btn,
-.contact-form .cta-btn.whatsapp {
-  width: 90%;
-  min-width: 130px;
-  max-width: 98%;
-  align-self: center;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-/* BENEFICIOS */
-.benefits-section h3 {
-  text-align: center;
-  margin-bottom: 18px;
-  font-size: 2em;
-  font-weight: 800;
-  color: var(--china-red);
-  letter-spacing: 0.01em;
-}
-.benefits-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px 40px;
-  justify-content: center;
-}
-.benefit-card {
-  background: var(--china-card-bg);
-  border-radius: 18px;
-  box-shadow: 0 2px 18px rgba(231,30,38,0.05);
-  padding: 38px 22px 32px 32px;
-  display: flex;
-  align-items: center;
-  font-size: 1.65em;
-  gap: 32px;
-  min-width: 400px;
-  min-height: 98px;
-  max-width: 630px;
-  transition: box-shadow 0.3s, transform 0.21s, opacity 0.5s;
-  border: 1.3px solid transparent;
-  color: var(--china-black);
-  opacity: 0;
-  transform: translateY(32px) scale(0.98);
-  will-change: transform, opacity;
-}
-.benefit-card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: box-shadow 0.3s, transform 0.34s cubic-bezier(.44,0,.22,1), opacity 0.6s cubic-bezier(.44,0,.22,1);
-}
-.benefit-card svg {
-  min-width: 64px;
-  min-height: 64px;
-  width: 64px;
-  height: 64px;
-  vertical-align: middle;
-  margin-bottom: 3px;
-  margin-right: 8px;
-  stroke: var(--china-red);
-  stroke-width: 2;
-  fill: none;
-  filter: drop-shadow(0 1px 3px rgba(231,30,38,0.03));
-  transition: stroke 0.2s;
-}
-.benefit-card svg text {
-  fill: var(--china-red);
-  stroke: var(--china-red);
-  font-weight: 700;
-}
-.benefit-card svg * {
-  stroke: var(--china-red)!important;
-  stroke-width: 2!important;
-}
-.benefit-card:hover {
-  box-shadow: 0 6px 22px rgba(253,216,53,0.10), 0 2px 8px rgba(231,30,38,0.10);
-  transform: translateY(-2px) scale(1.03);
-  border: 1.3px solid var(--china-yellow);
-  background: #fffbe8;
-}
-
-/* FOOTER */
-footer {
-  background: var(--china-footer-bg);
-  color: #fff;
-  text-align: center;
-  padding: 28px 8px;
-  border-radius: 14px 14px 0 0;
-  margin-top: 44px;
-  box-shadow: 0 -3px 28px rgba(30,30,30,0.09);
-}
-.footer-row {display: flex; flex-direction: column; gap: 7px;}
-.footer
