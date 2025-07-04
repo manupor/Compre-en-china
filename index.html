@@ -12,65 +12,12 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      width: 100vw;
-      min-width: 100vw;
-      overflow-x: hidden;
-      background: #fff;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-    .about-contact-section .container-fluid {
-      width: 100vw;
-      margin: 0;
-      padding: 0;
-      max-width: 100vw;
-    }
-    .about-contact-section .row {
-      min-height: 440px;
-    }
-    .about-contact-section .col-lg-6 {
-      min-height: 440px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    @media (max-width: 991px) {
-      .about-contact-section .row {
-        flex-direction: column;
-      }
-      .about-contact-section .col-lg-6 {
-        padding: 32px 12px !important;
-        text-align: center !important;
-        min-height: auto;
-      }
-      .about-contact-section .text-start {
-        text-align: center !important;
-      }
-    }
-    .btn-danger {
-      background: #d72d2d;
-      border: none;
-    }
-    .btn-danger:hover {
-      background: #bb2222;
-    }
-    .btn-warning {
-      background: #ffb400;
-      border: none;
-      color: #222;
-    }
-    .btn-warning:hover {
-      background: #e0a200;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
 
 <!-- HERO -->
-<section class="hero-section d-flex align-items-center justify-content-center" style="min-height: 80vh; background: url('assets/images/bg/hero-carga.jpg') center center/cover no-repeat;">
-  <div class="hero-overlay" style="background: rgba(20,24,33,0.62); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+<section class="hero-section d-flex align-items-center justify-content-center">
+  <div class="hero-overlay"></div>
   <div class="container position-relative" style="z-index:2;">
     <div class="row justify-content-center">
       <div class="col-lg-9 text-center text-white py-5">
@@ -86,22 +33,20 @@
 </section>
 
 <!-- ACERCA Y CONTACTO EXPRESS -->
-<section class="about-contact-section py-5 bg-white w-100" style="padding-left:0; padding-right:0;">
-  <div class="container-fluid px-0">
-    <div class="row g-0 justify-content-center align-items-stretch">
-      <!-- Texto a la izquierda -->
-      <div class="col-lg-6 d-flex flex-column justify-content-center ps-lg-5 pe-lg-4 py-5 bg-white">
-        <img src="assets/images/logo/logo2.png" alt="Logo Compre en China IG" class="mb-3" style="max-width:170px;">
-        <p class="fs-5 mb-2 text-start">
-          En Compre en China IG conectamos Latinoamérica con las principales rutas logísticas del mundo.<br>
-          Ofrecemos acompañamiento completo para pymes y grandes empresas: paquetería, carga consolidada, contenedores y asesoría estratégica.<br>
-          Oficinas físicas en Costa Rica y bodegas en China, USA, Colombia y Panamá.
-        </p>
-      </div>
-      <!-- Form a la derecha -->
-      <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center bg-light py-5">
-        <form id="contacto" class="p-4 rounded-4 shadow bg-light w-100" style="max-width: 400px;">
-          <h3 class="mb-3 text-danger text-center">Contacto Express</h3>
+<section class="about-contact-section">
+  <div class="about-contact-inner">
+    <div class="about-left">
+      <img src="assets/images/logo/logo2.png" alt="Logo Compre en China IG">
+      <p>
+        En Compre en China IG conectamos Latinoamérica con las principales rutas logísticas del mundo.<br>
+        Ofrecemos acompañamiento completo para pymes y grandes empresas: paquetería, carga consolidada, contenedores y asesoría estratégica.<br>
+        Oficinas físicas en Costa Rica y bodegas en China, USA, Colombia y Panamá.
+      </p>
+    </div>
+    <div class="about-right">
+      <div style="width:100%;">
+        <form id="contacto">
+          <h3>Contacto Express</h3>
           <div class="mb-3">
             <input type="text" class="form-control" placeholder="Nombre" required>
           </div>
@@ -113,8 +58,7 @@
           </div>
           <a href="https://wa.me/50686165186" target="_blank" class="btn btn-success w-100 mb-1">WhatsApp</a>
         </form>
-        <!-- Botón centrado bajo el form -->
-        <div class="w-100 text-center mt-3">
+        <div class="agendar-below-form">
           <a href="#contacto" class="btn btn-danger">Agendar Asesoría Gratuita</a>
         </div>
       </div>
@@ -122,8 +66,8 @@
   </div>
 </section>
 
-<!-- SERVICIOS RÁPIDOS -->
-<section class="services-section py-5" style="background: #fff9f3;">
+<!-- SERVICIOS -->
+<section class="services-section py-5">
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col">
@@ -182,133 +126,4 @@
       <div class="col-6 col-md-2">
         <div class="benefit-card text-center px-2">
           <img src="assets/images/icons/entrega.svg" style="width:36px" alt="">
-          <div class="mt-2">Entregas semanales sin fallas</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-2">
-        <div class="benefit-card text-center px-2">
-          <img src="assets/images/icons/whatsapp.svg" style="width:36px" alt="">
-          <div class="mt-2">Seguimiento por WhatsApp en tiempo real</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-2">
-        <div class="benefit-card text-center px-2">
-          <img src="assets/images/icons/b2b.svg" style="width:36px" alt="">
-          <div class="mt-2">Expertos en importaciones B2C y B2B</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-2">
-        <div class="benefit-card text-center px-2">
-          <img src="assets/images/icons/seguridad.svg" style="width:36px" alt="">
-          <div class="mt-2">Seguridad aduanal y legal</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VISIÓN -->
-<section class="vision-section py-5" style="background:url('assets/images/bg/ciudad-shenzhen.jpg') center center/cover no-repeat;">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-10" style="background:rgba(0,0,0,0.5); border-radius:24px; color:#fff; padding:40px 16px;">
-        <h3 class="fw-bold mb-3">Nuestra visión</h3>
-        <p class="fs-4 mb-2">
-          Nuestra visión es que cada empresa en Latinoamérica pueda importar sin miedo, sin pérdidas y con un sistema que funcione.<br>
-          En Compre en China IG no solo movemos paquetes, movemos negocios, sueños y expansión.
-        </p>
-        <p class="fw-semibold mb-0">Porque importar debería ser tan rentable como su negocio lo merece.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOTICIAS / EVENTOS -->
-<section class="news-section py-5 bg-white">
-  <div class="container">
-    <div class="row text-center mb-4">
-      <div class="col">
-        <h2 class="fw-bold text-danger mb-1">Próximos Eventos</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-7">
-        <div class="card shadow border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold mb-2">Webinar gratuito: Importaciones 2024: rutas, aranceles y soluciones</h5>
-            <p class="mb-1">11 de junio - <b>7:00pm</b> Costa Rica</p>
-            <a href="#" class="btn btn-danger btn-sm rounded-pill mt-2">Registrarse</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CÁMARAS Y CERTIFICACIONES -->
-<section class="certifications-section py-5 bg-light">
-  <div class="container">
-    <div class="row text-center mb-3">
-      <div class="col">
-        <span class="fw-semibold">Miembros activos de cámaras de comercio en Latinoamérica y alianzas con operadores logísticos certificados en Asia y USA.</span>
-      </div>
-    </div>
-    <div class="row justify-content-center gy-3">
-      <!-- Logos de cámaras (ejemplo) -->
-      <div class="col-4 col-md-2">
-        <img src="assets/images/logos/camara1.png" alt="Cámara Comercio 1" class="img-fluid" />
-      </div>
-      <div class="col-4 col-md-2">
-        <img src="assets/images/logos/camara2.png" alt="Cámara Comercio 2" class="img-fluid" />
-      </div>
-      <div class="col-4 col-md-2">
-        <img src="assets/images/logos/camara3.png" alt="Cámara Comercio 3" class="img-fluid" />
-      </div>
-      <!-- ... más logos -->
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS (PENDIENTE, placeholder slider) -->
-<section class="testimonials-section py-5 bg-white">
-  <div class="container">
-    <div class="row text-center mb-3">
-      <div class="col">
-        <h2 class="fw-bold text-danger mb-1">Testimonios de Clientes</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <div class="card border-0 shadow-sm mb-2">
-          <div class="card-body">
-            <em>Pendiente...</em>
-            <!-- Slider con testimonios puede ir aquí -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-dark text-white pt-4 pb-3">
-  <div class="container text-center">
-    <p class="mb-2">
-      Aguas Zarcas, San Carlos, Costa Rica<br>
-      +506 8616-5186 | ✉️ info@compreenchinaig.com
-    </p>
-    <div class="mb-2">
-      <a href="#" class="text-warning mx-2">Instagram</a> |
-      <a href="#" class="text-warning mx-2">YouTube</a> |
-      <a href="#" class="text-warning mx-2">WhatsApp</a> |
-      <a href="#" class="text-warning mx-2">Términos</a> |
-      <a href="#" class="text-warning mx-2">Política de Privacidad</a>
-    </div>
-    <div class="small">
-      © 2025 Compre en China IG. Todos los derechos reservados.
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+          <div class="mt-2">Entregas semanales sin fallas</div
