@@ -49,7 +49,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('assets/images/bg/hero-carga.jpg') center center/cover no-repeat;
+  background: url('naviera.jpg') center center/cover no-repeat;
   overflow: hidden;
 }
 .hero-overlay {
@@ -196,7 +196,7 @@ img { max-width: 100%; display: block; }
 
 /* VISION */
 .vision-section {
-  background: url('assets/images/bg/ciudad-shenzhen.jpg') center center/cover no-repeat;
+  background: url('costa-rica-de-bandera.jpg') center center/cover no-repeat;
   padding: 3rem 0;
 }
 .vision-section h3,
