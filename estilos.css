@@ -9,6 +9,14 @@
 
 html { scroll-behavior: smooth; }
 
+/* Efecto parallax general */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   background: var(--china-bg);
