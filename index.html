@@ -12,6 +12,59 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 100vw;
+      min-width: 100vw;
+      overflow-x: hidden;
+      background: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .about-contact-section .container-fluid {
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+    }
+    .about-contact-section .row {
+      min-height: 440px;
+    }
+    .about-contact-section .col-lg-6 {
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 991px) {
+      .about-contact-section .row {
+        flex-direction: column;
+      }
+      .about-contact-section .col-lg-6 {
+        padding: 32px 12px !important;
+        text-align: center !important;
+        min-height: auto;
+      }
+      .about-contact-section .text-start {
+        text-align: center !important;
+      }
+    }
+    .btn-danger {
+      background: #d72d2d;
+      border: none;
+    }
+    .btn-danger:hover {
+      background: #bb2222;
+    }
+    .btn-warning {
+      background: #ffb400;
+      border: none;
+      color: #222;
+    }
+    .btn-warning:hover {
+      background: #e0a200;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -33,21 +86,22 @@
 </section>
 
 <!-- ACERCA Y CONTACTO EXPRESS -->
-<section class="about-contact-section py-5 bg-white">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6">
+<section class="about-contact-section py-5 bg-white w-100" style="padding-left:0; padding-right:0;">
+  <div class="container-fluid px-0">
+    <div class="row g-0 justify-content-center align-items-stretch">
+      <!-- Texto a la izquierda -->
+      <div class="col-lg-6 d-flex flex-column justify-content-center ps-lg-5 pe-lg-4 py-5 bg-white">
         <img src="assets/images/logo/logo2.png" alt="Logo Compre en China IG" class="mb-3" style="max-width:170px;">
-        <p class="fs-5 mb-2">
+        <p class="fs-5 mb-2 text-start">
           En Compre en China IG conectamos Latinoamérica con las principales rutas logísticas del mundo.<br>
           Ofrecemos acompañamiento completo para pymes y grandes empresas: paquetería, carga consolidada, contenedores y asesoría estratégica.<br>
           Oficinas físicas en Costa Rica y bodegas en China, USA, Colombia y Panamá.
         </p>
-        <a href="#contacto" class="btn btn-danger mt-3">Agendar Asesoría Gratuita</a>
       </div>
-      <div class="col-lg-6">
-        <form id="contacto" class="p-4 rounded-4 shadow bg-light">
-          <h3 class="mb-3 text-danger">Contacto Express</h3>
+      <!-- Form a la derecha -->
+      <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center bg-light py-5">
+        <form id="contacto" class="p-4 rounded-4 shadow bg-light w-100" style="max-width: 400px;">
+          <h3 class="mb-3 text-danger text-center">Contacto Express</h3>
           <div class="mb-3">
             <input type="text" class="form-control" placeholder="Nombre" required>
           </div>
@@ -59,6 +113,10 @@
           </div>
           <a href="https://wa.me/50686165186" target="_blank" class="btn btn-success w-100 mb-1">WhatsApp</a>
         </form>
+        <!-- Botón centrado bajo el form -->
+        <div class="w-100 text-center mt-3">
+          <a href="#contacto" class="btn btn-danger">Agendar Asesoría Gratuita</a>
+        </div>
       </div>
     </div>
   </div>
