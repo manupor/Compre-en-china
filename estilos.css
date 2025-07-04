@@ -49,8 +49,11 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('assets/images/bg/hero-carga.jpg') center center/cover no-repeat;
+  background: url('naviera.jpg') center center/cover no-repeat;
   overflow: hidden;
+}
+.hero-bg {
+  background: url("naviera.jpg") center center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
@@ -71,6 +74,16 @@ img { max-width: 100%; display: block; }
   color: var(--china-yellow);
   font-weight: 700;
 }
+.logo-hero {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.22s, opacity 0.22s;
+}
+
 
 /* ACERCA + CONTACTO */
 .about-contact-section {
@@ -156,6 +169,11 @@ img { max-width: 100%; display: block; }
 .service-card small {
   color: #474747;
 }
+.service-card img, .service-card svg {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+}
 
 /* BENEFICIOS */
 .benefits-section {
@@ -196,7 +214,7 @@ img { max-width: 100%; display: block; }
 
 /* VISION */
 .vision-section {
-  background: url('assets/images/bg/ciudad-shenzhen.jpg') center center/cover no-repeat;
+  background: url('costa-rica-de-bandera.jpg') center center/cover no-repeat;
   padding: 3rem 0;
 }
 .vision-section h3,
